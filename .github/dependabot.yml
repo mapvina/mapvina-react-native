@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    open-pull-requests-limit: 10
+    schedule:
+      interval: weekly
+    groups:
+      docusaurus:
+        patterns:
+          - "@docusaurus/*"
+      react-navigation:
+        patterns:
+          - "@react-navigation/*"
+      turf:
+        patterns:
+          - "@turf/*"
+
+  - package-ecosystem: github-actions
+    directories:
+      - /.github/actions/**/*
+      - /.github/workflows
+    schedule:
+      interval: weekly

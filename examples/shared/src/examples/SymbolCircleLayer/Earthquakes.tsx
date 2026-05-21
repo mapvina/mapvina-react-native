@@ -1,0 +1,247 @@
+import {
+  Layer,
+  Map,
+  GeoJSONSource,
+  type GeoJSONSourceRef,
+  type SymbolLayerSpecification,
+  type CircleLayerSpecification,
+} from "@mapvina/mapvina-react-native";
+import moment from "moment";
+import { useRef, useState } from "react";
+import {
+  FlatList,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+
+import earthquakesData from "@/assets/geojson/earthquakes.json";
+import { MAPVINA_DEMO_STYLE } from "@/constants/MAPVINA_DEMO_STYLE";
+import { colors } from "@/styles/colors";
+
+// Style spec compliant layer definitions using kebab-case
+// Type these specifically for better type safety
+const singleCirclePaint: CircleLayerSpecification["paint"] = {
+  "circle-color": "green",
+  "circle-opacity": 0.84,
+  "circle-stroke-width": 2,
+  "circle-stroke-color": "white",
+  "circle-radius": 5,
+  "circle-pitch-alignment": "map",
+};
+
+const clusteredCirclePaint: CircleLayerSpecification["paint"] = {
+  "circle-pitch-alignment": "map",
+  "circle-color": [
+    "step",
+    ["get", "point_count"],
+    "#51bbd6",
+    100,
+    "#f1f075",
+    750,
+    "#f28cb1",
+  ],
+  "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40],
+  "circle-opacity": 0.84,
+  "circle-stroke-width": 2,
+  "circle-stroke-color": "white",
+};
+
+const clusterCountLayout: SymbolLayerSpecification["layout"] = {
+  "text-field": [
+    "format",
+    ["concat", ["get", "point_count"], "\n"],
+    {},
+    [
+      "concat",
+      ">1: ",
+      ["+", ["get", "mag2"], ["get", "mag3"], ["get", "mag4"], ["get", "mag5"]],
+    ],
+    { "font-scale": 0.8 },
+  ],
+  "text-size": 12,
+  "text-pitch-alignment": "map",
+};
+
+const styles = StyleSheet.create({
+  header: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#ffffff",
+    borderBottomWidth: 2,
+    borderBottomColor: colors.grey,
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  touchable: {
+    backgroundColor: colors.blue,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  touchableText: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: "bold",
+    lineHeight: 20,
+  },
+  listItem: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
+  listItemTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+});
+
+const mag1 = ["<", ["get", "mag"], 2];
+const mag2 = ["all", [">=", ["get", "mag"], 2], ["<", ["get", "mag"], 3]];
+const mag3 = ["all", [">=", ["get", "mag"], 3], ["<", ["get", "mag"], 4]];
+const mag4 = ["all", [">=", ["get", "mag"], 4], ["<", ["get", "mag"], 5]];
+const mag5 = [">=", ["get", "mag"], 5];
+
+export function Earthquakes() {
+  const geoJSONSourceRef = useRef<GeoJSONSourceRef>(null);
+  const [features, setFeatures] = useState<GeoJSON.Feature[]>();
+
+  return (
+    <>
+      <Modal visible={!!features}>
+        <SafeAreaProvider>
+          <SafeAreaView
+            edges={["top", "bottom"]}
+            style={{ position: "relative" }}
+          >
+            {features && (
+              <FlatList
+                stickyHeaderIndices={[0]}
+                ListHeaderComponent={() => {
+                  return (
+                    <View style={styles.header}>
+                      <Text style={styles.headerText}>
+                        Earthquakes ({features.length})
+                      </Text>
+                      <TouchableOpacity
+                        onPress={() => {
+                          setFeatures(undefined);
+                        }}
+                        style={styles.touchable}
+                      >
+                        <Text style={styles.touchableText}>✕</Text>
+                      </TouchableOpacity>
+                    </View>
+                  );
+                }}
+                keyExtractor={({ properties: earthquakeInfo }) => {
+                  return earthquakeInfo?.code;
+                }}
+                data={features}
+                renderItem={({ item: { properties: earthquakeInfo } }) => {
+                  const magnitude = `Magnitude: ${earthquakeInfo?.mag}`;
+                  const place = `Place: ${earthquakeInfo?.place}`;
+                  const code = `Code: ${earthquakeInfo?.code}`;
+                  const time = `Time: ${moment(earthquakeInfo?.time).format(
+                    "MMMM Do YYYY, h:mm:ss a",
+                  )}`;
+
+                  return (
+                    <View style={styles.listItem}>
+                      <Text style={styles.listItemTitle}>
+                        {earthquakeInfo?.title}
+                      </Text>
+                      <Text>{magnitude}</Text>
+                      <Text>{place}</Text>
+                      <Text>{code}</Text>
+                      <Text>{time}</Text>
+                    </View>
+                  );
+                }}
+              />
+            )}
+          </SafeAreaView>
+        </SafeAreaProvider>
+      </Modal>
+
+      <>
+        <Map mapStyle={MAPVINA_DEMO_STYLE}>
+          <GeoJSONSource
+            ref={geoJSONSourceRef}
+            data={earthquakesData as unknown as GeoJSON.FeatureCollection}
+            onPress={async (event) => {
+              const clusterId =
+                event.nativeEvent.features[0]?.properties?.cluster_id;
+
+              if (typeof clusterId === "number") {
+                const newFeatures =
+                  await geoJSONSourceRef.current?.getClusterLeaves(
+                    clusterId,
+                    999,
+                    0,
+                  );
+
+                setFeatures(newFeatures);
+              }
+            }}
+            cluster
+            clusterRadius={50}
+            clusterMaxZoom={14}
+            clusterMinPoints={3}
+            clusterProperties={{
+              mag1: [
+                ["+", ["accumulated"], ["get", "mag1"]],
+                ["case", mag1, 1, 0],
+              ],
+              mag2: [
+                ["+", ["accumulated"], ["get", "mag2"]],
+                ["case", mag2, 1, 0],
+              ],
+              mag3: [
+                ["+", ["accumulated"], ["get", "mag3"]],
+                ["case", mag3, 1, 0],
+              ],
+              mag4: [
+                ["+", ["accumulated"], ["get", "mag4"]],
+                ["case", mag4, 1, 0],
+              ],
+              mag5: [
+                ["+", ["accumulated"], ["get", "mag5"]],
+                ["case", mag5, 1, 0],
+              ],
+            }}
+          >
+            <Layer
+              type="symbol"
+              id="earthquakes-count"
+              layout={clusterCountLayout}
+            />
+
+            <Layer
+              type="circle"
+              id="earthquakes-cluster"
+              beforeId="earthquakes-count"
+              filter={["has", "point_count"]}
+              paint={clusteredCirclePaint}
+            />
+
+            <Layer
+              type="circle"
+              id="earthquakes-single"
+              filter={["!", ["has", "point_count"]]}
+              paint={singleCirclePaint}
+            />
+          </GeoJSONSource>
+        </Map>
+      </>
+    </>
+  );
+}

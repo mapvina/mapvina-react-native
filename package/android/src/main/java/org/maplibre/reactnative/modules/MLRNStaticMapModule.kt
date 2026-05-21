@@ -1,0 +1,121 @@
+package com.mapvina.reactnative.modules
+
+import android.graphics.Bitmap
+import android.util.Log
+import android.util.TypedValue
+import com.facebook.react.bridge.Promise
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReadableMap
+import com.mapvina.android.camera.CameraPosition
+import com.mapvina.android.maps.Style
+import com.mapvina.android.snapshotter.MapSnapshot
+import com.mapvina.android.snapshotter.MapSnapshotter
+import com.mapvina.reactnative.NativeStaticMapModuleSpec
+import com.mapvina.reactnative.utils.BitmapUtils
+import com.mapvina.reactnative.utils.ConvertUtils
+import com.mapvina.reactnative.utils.GeoJSONUtils
+import java.util.UUID
+
+class MLRNStaticMapModule(
+    private val reactContext: ReactApplicationContext,
+) : NativeStaticMapModuleSpec(reactContext) {
+    companion object {
+        const val NAME = "MLRNStaticMapModule"
+    }
+
+    override fun getName() = NAME
+
+    // Prevent garbage collection
+    private val snapshotterMap: MutableMap<String, MapSnapshotter> = HashMap()
+
+    override fun createImage(
+        readableMap: ReadableMap,
+        promise: Promise,
+    ) {
+        com.mapvina.android.storage.FileSource
+            .getInstance(reactContext)
+            .activate()
+
+        reactContext.runOnUiQueueThread {
+            val snapshotterID = UUID.randomUUID().toString()
+            val snapshotter = MapSnapshotter(reactContext, getOptions(readableMap))
+            snapshotterMap[snapshotterID] = snapshotter
+            snapshotter.start(
+                object : MapSnapshotter.SnapshotReadyCallback {
+                    override fun onSnapshotReady(snapshot: MapSnapshot) {
+                        val bitmap: Bitmap = snapshot.bitmap
+                        val result: String? =
+                            if (readableMap.getString("output") == "file") {
+                                BitmapUtils.createTempFile(
+                                    reactContext,
+                                    bitmap,
+                                )
+                            } else if (readableMap.getString("output") == "base64") {
+                                BitmapUtils.createBase64(bitmap)
+                            } else {
+                                null
+                            }
+
+                        if (result == null) {
+                            promise.reject(
+                                NAME,
+                                "Could not generate snapshot, please check Android logs for more info.",
+                            )
+                            return
+                        }
+
+                        promise.resolve(result)
+                        snapshotterMap.remove(snapshotterID)
+                    }
+                },
+            ) { error ->
+                Log.w(NAME, error)
+                snapshotterMap.remove(snapshotterID)
+            }
+        }
+    }
+
+    private fun getOptions(readableMap: ReadableMap): MapSnapshotter.Options {
+        val options: MapSnapshotter.Options =
+            MapSnapshotter.Options(
+                readableMap.getDouble("width").toInt(),
+                readableMap.getDouble("height").toInt(),
+            )
+
+        val showLogo = if (readableMap.hasKey("logo")) readableMap.getBoolean("logo") else false
+        options.withLogo(showLogo)
+        readableMap.getString("mapStyle")?.let { mapStyle ->
+            options.withStyleBuilder(
+                if (ConvertUtils.isJSONValid(mapStyle)) {
+                    Style.Builder().fromJson(mapStyle)
+                } else {
+                    Style.Builder().fromUri(mapStyle)
+                },
+            )
+        }
+        options.withPixelRatio(
+            TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                1f,
+                reactContext.resources.displayMetrics,
+            ),
+        )
+
+        if (readableMap.hasKey("center")) {
+            val center = GeoJSONUtils.toLatLng(readableMap.getArray("center"))
+            val cameraPosition: CameraPosition =
+                CameraPosition
+                    .Builder()
+                    .target(center)
+                    .tilt(ConvertUtils.getDouble("pitch", readableMap, 0.0))
+                    .bearing(ConvertUtils.getDouble("bearing", readableMap, 0.0))
+                    .zoom(ConvertUtils.getDouble("zoom", readableMap, 0.0))
+                    .build()
+            options.withCameraPosition(cameraPosition)
+        } else if (readableMap.hasKey("bounds")) {
+            options.withRegion(GeoJSONUtils.toLatLngBounds(readableMap.getArray("bounds")))
+        }
+
+        return options
+    }
+}

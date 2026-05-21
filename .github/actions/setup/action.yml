@@ -1,0 +1,45 @@
+name: Setup
+description: Setup Node.js and install dependencies
+
+inputs:
+  registry-url:
+    description: Optional registry to set up for auth.
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version-file: .nvmrc
+        registry-url: ${{ inputs.registry-url }}
+
+    - name: Enable Corepack for yarn v4
+      run: corepack enable
+      shell: bash
+
+    - name: Restore dependencies
+      id: yarn-cache
+      uses: actions/cache/restore@v5
+      with:
+        path: |
+          **/node_modules
+          .yarn/install-state.gz
+        key: yarn-${{ runner.os }}-${{ hashFiles('yarn.lock') }}-${{ hashFiles('**/package.json', '!node_modules/**') }}
+        restore-keys: |
+          yarn-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          yarn-${{ runner.os }}
+
+    - name: Install dependencies
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      run: yarn install --immutable
+      shell: bash
+
+    - name: Cache dependencies
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      uses: actions/cache/save@v5
+      with:
+        path: |
+          **/node_modules
+          .yarn/install-state.gz
+        key: ${{ steps.yarn-cache.outputs.cache-primary-key }}

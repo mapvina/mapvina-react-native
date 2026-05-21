@@ -1,0 +1,6 @@
+appId: com.mapvina.reactnative.example
+---
+- assertVisible:
+    id: "assert-result"
+    index: ${ASSERT_INDEX || 0}
+    text: "✅"

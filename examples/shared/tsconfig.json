@@ -1,0 +1,10 @@
+{
+  "extends": "../../package/tsconfig.json",
+  "exclude": [],
+  "compilerOptions": {
+    "paths": {
+      "@mapvina/mapvina-react-native": ["../../package/src/index"],
+      "@/*": ["./src/*"]
+    }
+  }
+}

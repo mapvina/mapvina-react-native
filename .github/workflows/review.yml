@@ -1,0 +1,107 @@
+name: Review
+
+on:
+  workflow_call:
+  # Release calls this Workflow
+  pull_request:
+    branches:
+      - main
+      - beta
+      - alpha
+  merge_group:
+    types:
+      - checks_requested
+
+jobs:
+  lint-tsc:
+    name: Lint TSC
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Lint with TSC
+        run: yarn lint:tsc
+
+  lint-eslint:
+    name: Lint ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Lint with ESLint
+        run: yarn lint:eslint
+
+  lint-ktlint:
+    name: Lint Ktlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Setup Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Lint with Ktlint
+        working-directory: ./package
+        run: |
+          brew install ktlint
+          ktlint "android/src/**/*.kt"
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Test with Jest
+        run: yarn package test
+
+  build-library:
+    name: Build Library
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build Library
+        run: yarn package prepack
+
+  build-docs:
+    name: Build Docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build Docs
+        run: yarn docs build
+
+  review-android:
+    name: Android
+    uses: ./.github/workflows/review-android.yml
+
+  review-ios:
+    name: iOS
+    uses: ./.github/workflows/review-ios.yml

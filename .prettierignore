@@ -1,0 +1,25 @@
+# Build outputs
+lib/
+coverage/
+
+# Lock files
+yarn.lock
+
+# Package
+package/android/build/
+
+# Examples
+**/android/app/build/
+**/android/app/.cxx/
+**/ios/build/
+**/ios/Pods/
+
+# Expo
+**/.expo/
+
+# Docusaurus
+**/.docusaurus/
+
+# Maestro
+**/report.xml
+

@@ -1,0 +1,44 @@
+{
+  "name": "expo-app",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "expo prebuild",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "purge": "rm -rf .expo android ios node_modules; yarn cache clean;"
+  },
+  "dependencies": {
+    "@mapvina-react-native/examples": "workspace:*",
+    "@mapvina/mapvina-react-native": "workspace:*",
+    "@react-native-masked-view/masked-view": "0.3.2",
+    "expo": "55.0.24",
+    "expo-dev-client": "55.0.32",
+    "react": "19.2.0",
+    "react-native": "0.83.6",
+    "react-native-gesture-handler": "2.30.0",
+    "react-native-reanimated": "4.2.1",
+    "react-native-safe-area-context": "5.6.2",
+    "react-native-screens": "4.23.0",
+    "react-native-worklets": "0.7.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.29.0",
+    "@types/node": "24.12.2",
+    "@types/react": "19.2.14",
+    "babel-plugin-module-resolver": "5.0.3",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3"
+  },
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "exclude": [
+          "@mapvina-react-native/examples"
+        ]
+      }
+    }
+  }
+}

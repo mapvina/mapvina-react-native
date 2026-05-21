@@ -1,0 +1,121 @@
+buildscript {
+    ext.getExtOrDefault = { name ->
+        return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['com.mapvina.reactnative.' + name]
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.7.2"
+        // noinspection DifferentKotlinGradleVersion
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion')}"
+    }
+}
+
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+
+apply plugin: "com.facebook.react"
+
+def getExtOrIntegerDefault(name) {
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["com.mapvina.reactnative." + name]).toInteger()
+}
+
+def getConfigurableExtOrDefault(name) {
+    return rootProject.ext.has("com.mapvina.reactnative." + name) ? rootProject.ext.get("com.mapvina.reactnative." + name) : project.properties["com.mapvina.reactnative." + name]
+}
+
+android {
+    namespace "com.mapvina.reactnative"
+
+    compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
+
+    defaultConfig {
+        minSdkVersion getExtOrIntegerDefault("minSdkVersion")
+        targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    lintOptions {
+        disable "GradleCompatible"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+
+            if (getConfigurableExtOrDefault("locationEngine") == "default") {
+                java.srcDirs += 'src/main/location-engine-default'
+            } else if (getConfigurableExtOrDefault("locationEngine") == "google") {
+                java.srcDirs += 'src/main/location-engine-google'
+            } else {
+                throw new GradleException("com.mapvina.reactnative.locationEngine.locationEngine should be one of [\"default\", \"google\"]`. \"${getConfigurableExtOrDefault("locationEngine")}\" was provided.")
+            }
+
+            java.srcDirs += [
+                    "generated/java",
+                    "generated/jni"
+            ]
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+def kotlin_version = getExtOrDefault("kotlinVersion")
+
+dependencies {
+    implementation "com.facebook.react:react-android"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // MapVina Native
+    implementation "io.github.mapvina:android-sdk-${getConfigurableExtOrDefault('nativeVariant')}:${getConfigurableExtOrDefault('nativeVersion')}"
+
+    // MapVina Plugins
+    implementation("io.github.mapvina:android-plugin-annotation-v9:${getConfigurableExtOrDefault('pluginVersion')}") {
+        exclude(group: "io.github.mapvina", module: "android-sdk")
+    }
+    implementation("io.github.mapvina:android-plugin-scalebar-v9:${getConfigurableExtOrDefault('pluginVersion')}") {
+        exclude(group: "io.github.mapvina", module: "android-sdk")
+    }
+
+    // Dependencies
+    implementation "io.github.mapvina:android-sdk-turf:${getConfigurableExtOrDefault('turfVersion')}"
+    implementation "com.squareup.okhttp3:okhttp:${getConfigurableExtOrDefault('okhttpVersion')}"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:${getConfigurableExtOrDefault('okhttpVersion')}"
+    implementation "androidx.vectordrawable:vectordrawable:1.2.0"
+    implementation "androidx.annotation:annotation:1.9.1"
+    implementation "androidx.appcompat:appcompat:1.7.1"
+
+    // Dependencies for Google Location Engine
+    if (getConfigurableExtOrDefault("locationEngine") == "google") {
+        implementation "com.google.android.gms:play-services-location:${getConfigurableExtOrDefault('googlePlayServicesLocationVersion')}"
+    }
+}
+
+react {
+    jsRootDir = file("../src/")
+    libraryName = "MapVinaReactNative"
+    codegenJavaPackageName = "com.mapvina.reactnative"
+}

@@ -1,0 +1,7 @@
+appId: com.mapvina.reactnative.example
+name: Map getViewState
+env:
+  TEST_GROUP: Map
+  TEST_NAME: Map getViewState
+---
+- runFlow: ../../base-flows/arrangeActAssert.yml

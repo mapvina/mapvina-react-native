@@ -1,0 +1,18 @@
+appId: com.mapvina.reactnative.example
+---
+- launchApp
+
+- tapOn: "E2E Tests, ›"
+
+- scrollUntilVisible:
+    element:
+      text: "${TEST_GROUP}, ›"
+- tapOn: "${TEST_GROUP}, ›"
+
+- scrollUntilVisible:
+    element:
+      text: "${TEST_NAME}, ›"
+- tapOn: "${TEST_NAME}, ›"
+
+- assertVisible: "${TEST_NAME}"
+- waitForAnimationToEnd

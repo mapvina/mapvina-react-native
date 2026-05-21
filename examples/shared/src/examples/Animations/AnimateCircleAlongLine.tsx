@@ -1,0 +1,101 @@
+import {
+  Animated,
+  Camera,
+  Layer,
+  Map,
+  GeoJSONSource,
+} from "@mapvina/mapvina-react-native";
+import { useEffect, useState } from "react";
+
+import { PulseCircleLayer } from "@/components/PulseCircleLayer";
+import { ROUTE_FEATURE, ROUTE_FEATURE_BOUNDS } from "@/constants/GEOMETRIES";
+import { MAPVINA_DEMO_STYLE } from "@/constants/MAPVINA_DEMO_STYLE";
+import { RouteSimulator } from "@/utils/RouteSimulator";
+
+export function AnimateCircleAlongLine() {
+  const [currentPoint, setCurrentPoint] =
+    useState<
+      GeoJSON.Feature<GeoJSON.Point, { distance: number; nearestIndex: number }>
+    >();
+
+  useEffect(() => {
+    const routeSimulator = new RouteSimulator(ROUTE_FEATURE);
+
+    routeSimulator.addListener(
+      (
+        point: GeoJSON.Feature<
+          GeoJSON.Point,
+          { distance: number; nearestIndex: number }
+        >,
+      ) => {
+        setCurrentPoint(point);
+      },
+    );
+
+    routeSimulator.start();
+
+    return () => {
+      routeSimulator.stop();
+    };
+  }, []);
+
+  const renderProgressLine = () => {
+    if (!currentPoint) {
+      return null;
+    }
+
+    const { nearestIndex } = currentPoint.properties;
+    const coords = ROUTE_FEATURE.geometry.coordinates.filter(
+      (_coordinates, index) => index <= nearestIndex,
+    );
+    coords.push(currentPoint.geometry.coordinates);
+
+    if (coords.length < 2) {
+      return null;
+    }
+
+    const lineString: GeoJSON.LineString = {
+      type: "LineString",
+      coordinates: coords,
+    };
+
+    return (
+      <Animated.GeoJSONSource id="progressSource" data={lineString}>
+        <Animated.Layer
+          type="line"
+          id="progress-line"
+          paint={{
+            "line-color": "#314ccd",
+            "line-width": 3,
+          }}
+          afterId="route-line"
+        />
+      </Animated.GeoJSONSource>
+    );
+  };
+
+  return (
+    <Map mapStyle={MAPVINA_DEMO_STYLE}>
+      <Camera initialViewState={{ bounds: ROUTE_FEATURE_BOUNDS }} />
+
+      <GeoJSONSource id="route-source" data={ROUTE_FEATURE}>
+        <Layer
+          type="line"
+          id="route-line"
+          layout={{
+            "line-cap": "round",
+          }}
+          paint={{
+            "line-color": "white",
+            "line-width": 3,
+            "line-opacity": 0.84,
+          }}
+        />
+      </GeoJSONSource>
+
+      {currentPoint && <PulseCircleLayer data={currentPoint} />}
+
+      {renderProgressLine()}
+    </Map>
+  );
+}

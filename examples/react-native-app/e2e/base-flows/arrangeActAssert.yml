@@ -1,0 +1,7 @@
+appId: com.mapvina.reactnative.example
+---
+- runFlow: ./arrange.yml
+
+- runFlow: ./act.yml
+
+- runFlow: ./assert.yml

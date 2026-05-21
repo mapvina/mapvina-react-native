@@ -1,0 +1,21 @@
+appId: com.mapvina.reactnative.example
+name: Map showAttribution
+env:
+  TEST_GROUP: Map
+  TEST_NAME: Map showAttribution
+---
+- runFlow: ../../base-flows/arrange.yml
+
+- runFlow: ../../base-flows/act.yml
+
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - assertVisible: "MapVina Android"
+
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+      - assertVisible: "MapVina Native iOS"

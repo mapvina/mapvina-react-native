@@ -1,0 +1,96 @@
+# Xcode
+!**/*.xcodeproj
+!**/*.pbxproj
+!**/*.xcworkspacedata
+!**/*.xcsettings
+!**/*.xcscheme
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Watchman
+.watchmanconfig
+
+# Android
+.gradle
+local.properties
+
+# Node
+node_modules
+*.log
+.nvm
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+package.tgz
+
+# Expo
+.expo
+
+# OS X
+.DS_Store
+
+# Test generated files
+*.js.meta
+
+# Root dir shouldn't have Xcode project
+/*.xcodeproj
+
+# react-native-codegen
+/ReactCommon/fabric/components/rncore/
+/schema-rncore.json
+
+# Visual studio
+.vscode
+.vs
+
+# project specific
+package/ios/temp.zip
+package/ios/.framework_version
+package/ios/Pods/
+package/android/build/
+package/android/.gradle/
+package/android/.idea/
+package/android/android.iml
+package/android/gradle/
+package/android/gradlew
+package/android/gradlew.bat
+package/android/local.properties
+.idea
+coverage
+.project
+*.core.prefs
+*.iml
+.env
+
+# Build by bob
+lib/
+
+# Copied from root
+package/LICENSE.md
+package/README.md
+
+# React Native Codegen
+package/ios/generated
+package/android/generated
+
+# Maestro
+report.xml
