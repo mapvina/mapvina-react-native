@@ -135,7 +135,7 @@ It's also possible to build and run the React Native app from Android Studio and
 The following steps are necessary to upgrade MapVina Native for this library and the examples:
 
 - Android
-  - Update the `com.mapvina.reactnative.nativeVersion` property in [`/package/android/gradle.properties`](/package/android/gradle.properties)
+  - Update the `io.github.mapvina.reactnative.nativeVersion` property in [`/package/android/gradle.properties`](/package/android/gradle.properties)
 - iOS
   - Update the `$MLRN_NATIVE_VERSION` variable in [`/package/MapVinaReactNative.podspec`](/package/MapVinaReactNative.podspec)
   - Update the `XCRemoteSwiftPackageReference "mapvina-gl-native-distribution"` version requirement in [`/examples/react-native-app/ios/MapVinaReactNativeExample.xcodeproj/project.pbxproj`](/examples/react-native-app/ios/MapVinaReactNativeExample.xcodeproj/project.pbxproj)

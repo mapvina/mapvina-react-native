@@ -1,6 +1,6 @@
 buildscript {
     ext.getExtOrDefault = { name ->
-        return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['com.mapvina.reactnative.' + name]
+        return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['io.github.mapvina.reactnative.' + name]
     }
 
     repositories {
@@ -22,15 +22,15 @@ apply plugin: "kotlin-android"
 apply plugin: "com.facebook.react"
 
 def getExtOrIntegerDefault(name) {
-    return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["com.mapvina.reactnative." + name]).toInteger()
+    return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["io.github.mapvina.reactnative." + name]).toInteger()
 }
 
 def getConfigurableExtOrDefault(name) {
-    return rootProject.ext.has("com.mapvina.reactnative." + name) ? rootProject.ext.get("com.mapvina.reactnative." + name) : project.properties["com.mapvina.reactnative." + name]
+    return rootProject.ext.has("io.github.mapvina.reactnative." + name) ? rootProject.ext.get("io.github.mapvina.reactnative." + name) : project.properties["io.github.mapvina.reactnative." + name]
 }
 
 android {
-    namespace "com.mapvina.reactnative"
+    namespace "io.github.mapvina.reactnative"
 
     compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
 
@@ -67,7 +67,7 @@ android {
             } else if (getConfigurableExtOrDefault("locationEngine") == "google") {
                 java.srcDirs += 'src/main/location-engine-google'
             } else {
-                throw new GradleException("com.mapvina.reactnative.locationEngine.locationEngine should be one of [\"default\", \"google\"]`. \"${getConfigurableExtOrDefault("locationEngine")}\" was provided.")
+                throw new GradleException("io.github.mapvina.reactnative.locationEngine.locationEngine should be one of [\"default\", \"google\"]`. \"${getConfigurableExtOrDefault("locationEngine")}\" was provided.")
             }
 
             java.srcDirs += [
@@ -117,5 +117,5 @@ dependencies {
 react {
     jsRootDir = file("../src/")
     libraryName = "MapVinaReactNative"
-    codegenJavaPackageName = "com.mapvina.reactnative"
+    codegenJavaPackageName = "io.github.mapvina.reactnative"
 }

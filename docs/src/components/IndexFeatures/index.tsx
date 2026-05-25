@@ -1,7 +1,6 @@
 import CodeBlock from "@theme/CodeBlock";
 import Heading from "@theme/Heading";
 import clsx from "clsx";
-import React from "react";
 import type { ReactNode } from "react";
 
 import styles from "./styles.module.css";
@@ -29,7 +28,7 @@ const FeatureList: FeatureItemProps[] = [
           {`import { Map } from "@mapvina/mapvina-react-native";
 
 export function ExampleMap() {
-  return <Map mapStyle="https://maps.mapvina.com/styles/v1/streets.json?key=public_key" />;
+  return <Map mapStyle="https://maps.mapvina.com/styles/v2/streets.json?key=public_key" />;
 }
 `}
         </CodeBlock>

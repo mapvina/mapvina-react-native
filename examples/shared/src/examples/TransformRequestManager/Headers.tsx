@@ -17,7 +17,7 @@ export function Headers() {
     const idStyle = TransformRequestManager.addHeader({
       name: "X-Style-Only",
       value: "will-only-be-added-to-style-requests",
-      match: "https://maps.mapvina.com/styles/v1/streets.json?key=public_key",
+      match: "https://maps.mapvina.com/styles/v2/streets.json?key=public_key",
     });
 
     // Add header only to requests matching a regex pattern (RegExp object)

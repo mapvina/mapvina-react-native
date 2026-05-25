@@ -1,7 +1,7 @@
 {
   "name": "@mapvina/mapvina-react-native",
   "description": "React Native library for creating maps with MapVina Native for Android & iOS",
-  "version": "11.2.1",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public",
     "provenance": true
@@ -16,13 +16,13 @@
     "mapbox"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/mapvina/mapvina-react-native#readme",
+  "homepage": "https://github.io/github/mapvina/mapvina-react-native#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mapvina/mapvina-react-native.git"
+    "url": "git+https://github.io/github/mapvina/mapvina-react-native.git"
   },
   "bugs": {
-    "url": "https://github.com/mapvina/mapvina-react-native/issues"
+    "url": "https://github.io/github/mapvina/mapvina-react-native/issues"
   },
   "scripts": {
     "format:clang-format": "find ios -type f \\( -name \"*.h\" -o -name \"*.m\" -o -name \"*.mm\" \\) -exec clang-format -i {} +",
@@ -118,7 +118,7 @@
     "type": "all",
     "jsSrcsDir": "src",
     "android": {
-      "javaPackageName": "com.mapvina.reactnative"
+      "javaPackageName": "io.github.mapvina.reactnative"
     },
     "ios": {
       "componentProvider": {

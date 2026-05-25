@@ -12,10 +12,10 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE.md)
 [![Version](https://img.shields.io/npm/v/@mapvina/mapvina-react-native)](https://www.npmjs.com/package/@mapvina/mapvina-react-native)
-[![Actions](https://img.shields.io/github/actions/workflow/status/mapvina/mapvina-react-native/release.yml?label=Actions&branch=main)](https://github.com/mapvina/mapvina-react-native/actions/workflows/release.yml?query=branch:main)
+[![Actions](https://img.shields.io/github/actions/workflow/status/mapvina/mapvina-react-native/release.yml?label=Actions&branch=main)](https://github.io/github/mapvina/mapvina-react-native/actions/workflows/release.yml?query=branch:main)
 
 _React Native library for creating maps
-with [MapVina Native for Android & iOS](https://github.com/mapvina/mapvina-gl-native)._
+with [MapVina Native for Android & iOS](https://github.io/github/mapvina/mapvina-gl-native)._
 
 This project originated as a fork of [rnmapbox](https://github.com/rnmapbox/maps), a community-maintained
 React Native library for building maps with the Mapbox iOS and Android mobile SDKs. The original library
@@ -35,7 +35,7 @@ diverged, it has become necessary to separate the projects into specific wrapper
 
 ## Documentation
 
-https://mapvina.com/mapvina-react-native/
+https://mapvina.io/github/mapvina-react-native/
 
 ## Contributing & Development
 

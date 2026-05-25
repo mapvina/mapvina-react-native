@@ -97,7 +97,7 @@ MapVina React Native provides React Native bindings to MapVina Native rendering 
 4. Add TSDoc comments (triggers codegen for docs)
 5. Create native implementations:
    - iOS: ViewManager in `ios/components/`
-   - Android: ViewManager in `android/src/main/java/org/mapvina/reactnative/components/`
+   - Android: ViewManager in `android/src/main/java/io/github/mapvina/reactnative/components/`
 6. Add unit tests in `src/__tests__/`
 7. Add example scene in `examples/shared/src/examples/`
 
@@ -111,7 +111,7 @@ MapVina React Native provides React Native bindings to MapVina Native rendering 
 ### Changing Native Behavior
 
 - **iOS**: Edit files in `ios/components/` or `ios/modules/`
-- **Android**: Edit files in `android/src/main/java/org/mapvina/reactnative/`
+- **Android**: Edit files in `android/src/main/java/io/github/mapvina/reactnative/`
 - Rebuild native apps to test changes
 - Consider if changes affect public API (requires TypeScript type updates)
 
@@ -205,7 +205,7 @@ maestro test ./examples/react-native-app/e2e/tests
 │   ├── plugin/                 # Expo config plugin
 │   └── __tests__/              # Jest unit tests
 ├── android/                    # Android native code
-│   ├── src/main/java/org/mapvina/reactnative/
+│   ├── src/main/java/io/github/mapvina/reactnative/
 │   ├── build.gradle            # Android build config
 │   └── gradle.properties       # Native version config
 ├── ios/                        # iOS native code

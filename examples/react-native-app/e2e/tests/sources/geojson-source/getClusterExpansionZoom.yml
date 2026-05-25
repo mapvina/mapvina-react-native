@@ -1,4 +1,4 @@
-appId: com.mapvina.reactnative.example
+appId: io.github.mapvina.reactnative.example
 name: GeoJSONSource getClusterExpansionZoom
 env:
   TEST_GROUP: GeoJSONSource

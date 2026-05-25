@@ -13,11 +13,11 @@ This package wraps MapVina Native for Android and iOS, these are the currently u
 <dl>
     <dt>Android</dt>
     <dd>
-      <a href="https://github.com/mapvina/mapvina-native/releases/tag/android-v13.0.2">13.0.2</a>
+      <a href="https://github.io/github/mapvina/mapvina-native/releases/tag/android-v13.0.2">13.0.2</a>
     </dd>
     <dt>iOS</dt>
     <dd>
-      <a href="https://github.com/mapvina/mapvina-native/releases/tag/ios-v6.25.0">6.25.0</a>
+      <a href="https://github.io/github/mapvina/mapvina-native/releases/tag/ios-v6.25.0">6.25.0</a>
     </dd>
 </dl>
 
@@ -33,7 +33,7 @@ This package wraps MapVina Native for Android and iOS, these are the currently u
   <dt>Map Style/Tiles</dt>
   <dd>
     <ul>
-      <li>For development the <a href="https://github.com/mapvina/demotiles">MapVina Demo Tiles</a> are used</li>
+      <li>For development the <a href="https://github.io/github/mapvina/demotiles">MapVina Demo Tiles</a> are used</li>
       <li>For production use, please provide your own style/tiles or use a provider like Stadia Maps or MapTiler</li>
     </ul>
   </dd>
@@ -56,6 +56,6 @@ import React from "react";
 import { Map } from "@mapvina/mapvina-react-native";
 
 function App() {
-  return <Map mapStyle="https://maps.mapvina.com/styles/v1/streets.json?key=public_key" />;
+  return <Map mapStyle="https://maps.mapvina.com/styles/v2/streets.json?key=public_key" />;
 }
 ```

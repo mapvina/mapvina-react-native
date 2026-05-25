@@ -17,7 +17,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "com.mapvina.expo.example",
+    bundleIdentifier: "io.github.mapvina.expo.example",
     infoPlist: {
       NSLocationWhenInUseUsageDescription:
         "Permission is necessary to display user location",
@@ -28,7 +28,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
-    package: "com.mapvina.expo.example",
+    package: "io.github.mapvina.expo.example",
   },
   plugins: [
     [

@@ -66,7 +66,7 @@ describe("Expo Plugin iOS – applyPodfileGlobalVariables", () => {
           ios: {
             ...PROPS.ios,
             spmSpec: `{
-  url: "https://github.com/mapvina/mapvina-gl-native-distribution",
+  url: "https://github.io/github/mapvina/mapvina-gl-native-distribution",
   requirement: {
     kind: "upToNextMajorVersion",
     minimumVersion: "0.0.0"

@@ -19,7 +19,7 @@ describe("StaticMapImageManager", () => {
         zoom: 12,
         bearing: 20,
         pitch: 30,
-        mapStyle: "https://maps.mapvina.com/styles/v1/streets.json?key=public_key",
+        mapStyle: "https://maps.mapvina.com/styles/v2/streets.json?key=public_key",
         width: 128,
         height: 64,
         output: "file",

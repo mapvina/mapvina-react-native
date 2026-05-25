@@ -63,7 +63,7 @@ const config: Config = {
           path: "content",
           sidebarPath: "./sidebars.ts",
           editUrl:
-            "https://github.com/mapvina/mapvina-react-native/tree/main/docs/",
+            "https://github.io/github/mapvina/mapvina-react-native/tree/main/docs/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -112,7 +112,7 @@ const config: Config = {
           label: "Types",
         },
         {
-          href: "https://github.com/mapvina/mapvina-react-native",
+          href: "https://github.io/github/mapvina/mapvina-react-native",
           label: "GitHub",
           position: "right",
         },
@@ -127,7 +127,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub Discussions",
-              href: "https://github.com/mapvina/mapvina-react-native/discussions",
+              href: "https://github.io/github/mapvina/mapvina-react-native/discussions",
             },
             {
               label: "Slack",
@@ -148,7 +148,7 @@ const config: Config = {
             },
             {
               label: "X",
-              href: "https://twitter.com/mapvina",
+              href: "https://twitter.io/github/mapvina",
             },
             {
               label: "LinkedIn",

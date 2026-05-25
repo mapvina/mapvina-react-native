@@ -299,7 +299,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapvina.reactnative.example;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.mapvina.reactnative.example;
 				PRODUCT_NAME = MapVinaReactNativeExample;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -328,7 +328,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapvina.reactnative.example;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.mapvina.reactnative.example;
 				PRODUCT_NAME = MapVinaReactNativeExample;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
@@ -519,7 +519,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		D7A1B69541AF6CC5CF21A154 /* XCRemoteSwiftPackageReference "mapvina-gl-native-distribution" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mapvina/mapvina-gl-native-distribution";
+			repositoryURL = "https://github.io/github/mapvina/mapvina-gl-native-distribution";
 			requirement = {
 				kind = exactVersion;
 				version = 6.25.0;

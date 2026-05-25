@@ -39,10 +39,10 @@ When using React Native, the customizations have to be applied differently for e
 
 ### Android
 
-On Android they are set in the `gradle.properties`, each of them prefixed with `com.mapvina.reactnative`. Example:
+On Android they are set in the `gradle.properties`, each of them prefixed with `io.github.mapvina.reactnative`. Example:
 
 ```diff
-+ com.mapvina.reactnative.nativeVersion=x.x.x
++ io.github.mapvina.reactnative.nativeVersion=x.x.x
 ```
 
 ### iOS
@@ -61,20 +61,20 @@ target "AppName" do
 
 | Prop Key                            | Type                    | Description                                                                                                   |
 | ----------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `nativeVersion`                     | `VersionString`         | Version for [`com.mapvina.gl:android-sdk-*`](https://mvnrepository.com/artifact/com.mapvina.gl/android-sdk) |
-| `nativeVariant`                     | `"opengl" \| "vulkan"`  | [Variant of `com.mapvina.gl:android-sdk-*`](#native-variant)                                                 |
-| `pluginVersion`                     | `VersionString`         | Version for `com.mapvina.gl:android-plugin-*-v9`                                                             |
-| `turfVersion`                       | `VersionString`         | Version for `com.mapvina.gl:android-sdk-turf`                                                                |
+| `nativeVersion`                     | `VersionString`         | Version for [`io.github.mapvina.gl:android-sdk-*`](https://mvnrepository.com/artifact/io.github.mapvina.gl/android-sdk) |
+| `nativeVariant`                     | `"opengl" \| "vulkan"`  | [Variant of `io.github.mapvina.gl:android-sdk-*`](#native-variant)                                                 |
+| `pluginVersion`                     | `VersionString`         | Version for `io.github.mapvina.gl:android-plugin-*-v9`                                                             |
+| `turfVersion`                       | `VersionString`         | Version for `io.github.mapvina.gl:android-sdk-turf`                                                                |
 | `okhttpVersion`                     | `VersionString`         | Version for `com.squareup.okhttp3:okhttp`                                                                     |
 | `locationEngine`                    | `"default" \| "google"` | [Location engine to be used](#location-engine)                                                                |
 | `googlePlayServicesLocationVersion` | `VersionString`         | Version for `com.google.android.gms:play-services-location`, only used with `locationEngine: "google"`        |
 
-For default values see [`gradle.properties` of the library](https://github.com/mapvina/mapvina-react-native/tree/main/android/gradle.properties).
+For default values see [`gradle.properties` of the library](https://github.io/github/mapvina/mapvina-react-native/tree/main/android/gradle.properties).
 
 #### Native Variant
 
 You can choose between the current default OpenGL ES and the newer Vulkan rendering backend. Read more on the
-[MapVina Native Release introducing Vulkan](https://github.com/mapvina/mapvina-native/releases/tag/android-v11.7.0).
+[MapVina Native Release introducing Vulkan](https://github.io/github/mapvina/mapvina-native/releases/tag/android-v11.7.0).
 
 #### Location Engine
 
@@ -94,10 +94,10 @@ Two location engines are available on Android:
 
 | Prop Key        | `Podfile` Global Variable | Type            | Description                                                                                                           |
 | --------------- | ------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `nativeVersion` | `$MLRN_NATIVE_VERSION`    | `VersionString` | Version for [`mapvina-gl-native-distribution`](https://github.com/mapvina/mapvina-gl-native-distribution/releases) |
+| `nativeVersion` | `$MLRN_NATIVE_VERSION`    | `VersionString` | Version for [`mapvina-gl-native-distribution`](https://github.io/github/mapvina/mapvina-gl-native-distribution/releases) |
 | `spmSpec`       | `$MLRN_SPM_SPEC`          | `string`        | [Swift Package Manager Spec](#spm-spec)                                                                               |
 
-For default values see [`mapvina-react-native.podspec` of the library](https://github.com/mapvina/mapvina-react-native/blob/main/mapvina-react-native.podspec).
+For default values see [`mapvina-react-native.podspec` of the library](https://github.io/github/mapvina/mapvina-react-native/blob/main/mapvina-react-native.podspec).
 
 #### SPM Spec
 
@@ -105,7 +105,7 @@ Setting a Swift Package Manager Spec allows further customization over setting t
 
 ```rb
 $MLRN_SPM_SPEC = {
-  url: "https://github.com/mapvina/mapvina-gl-native-distribution",
+  url: "https://github.io/github/mapvina/mapvina-gl-native-distribution",
   requirement: {
     kind: "upToNextMajorVersion",
     minimumVersion: "x.x.x"

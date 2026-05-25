@@ -12,7 +12,7 @@ type PropertyItem = {
   value: string;
 };
 
-export const GRADLE_PROPERTIES_PREFIX = "com.mapvina.reactnative.";
+export const GRADLE_PROPERTIES_PREFIX = "io.github.mapvina.reactnative.";
 
 export const getGradleProperties = (
   props: MapVinaPluginProps,

@@ -154,7 +154,7 @@ export async function generateStyles() {
 
     return properties.filter((property) => {
       // TODO: Codegen adoptions for native style code
-      // https://github.com/mapvina/mapvina-react-native/issues/562
+      // https://github.io/github/mapvina/mapvina-react-native/issues/562
       return !["textVariableAnchorOffset"].includes(property.name);
     });
   }

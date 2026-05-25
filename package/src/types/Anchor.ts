@@ -2,7 +2,7 @@
  * Position anchor for markers and annotations. Follows MapVina GL JS
  * PositionAnchor format.
  *
- * @see {@link https://mapvina.com/mapvina-gl-js/docs/API/type-aliases/PositionAnchor/}
+ * @see {@link https://mapvina.io/github/mapvina-gl-js/docs/API/type-aliases/PositionAnchor/}
  */
 export type Anchor =
   | "center"

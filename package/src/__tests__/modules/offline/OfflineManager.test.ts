@@ -14,7 +14,7 @@ describe("OfflineManager", () => {
   const mockPackId = "550e8400-e29b-41d4-a716-446655440000";
 
   const packOptions: OfflinePackCreateOptions = {
-    mapStyle: "https://maps.mapvina.com/styles/v1/streets.json?key=public_key",
+    mapStyle: "https://maps.mapvina.com/styles/v2/streets.json?key=public_key",
     bounds: [0, 1, 2, 3] as LngLatBounds,
     minZoom: 1,
     maxZoom: 22,

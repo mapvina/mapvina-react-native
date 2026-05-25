@@ -11,21 +11,21 @@ export type MapVinaPluginProps =
        */
       android?: {
         /**
-         * Version for `com.mapvina.gl:android-sdk-*`
+         * Version for `io.github.mapvina.gl:android-sdk-*`
          */
         nativeVersion?: VersionString;
         /**
-         * Variant of `com.mapvina.gl:android-sdk-*`
+         * Variant of `io.github.mapvina.gl:android-sdk-*`
          *
          * @defaultValue "opengl"
          */
         nativeVariant?: "opengl" | "vulkan";
         /**
-         * Version for `com.mapvina.gl:android-plugin-*-v9`
+         * Version for `io.github.mapvina.gl:android-plugin-*-v9`
          */
         pluginVersion?: VersionString;
         /**
-         * Version for `com.mapvina.gl:android-sdk-turf`
+         * Version for `io.github.mapvina.gl:android-sdk-turf`
          */
         turfVersion?: VersionString;
         /**
@@ -64,12 +64,12 @@ export type MapVinaPluginProps =
         /**
          * Swift Package Manager spec to override the selected version range
          *
-         * @defaultValue `{ url: "https://github.com/mapvina/mapvina-gl-native-distribution", requirement: { kind: "exactVersion", version: $MLRN_NATIVE_VERSION }, product_name: "MapVina" }`
+         * @defaultValue `{ url: "https://github.io/github/mapvina/mapvina-gl-native-distribution", requirement: { kind: "exactVersion", version: $MLRN_NATIVE_VERSION }, product_name: "MapVina" }`
          *
          * @example
          * ```ts
          * spmSpec: `{
-         *   url: "https://github.com/mapvina/mapvina-gl-native-distribution",
+         *   url: "https://github.io/github/mapvina/mapvina-gl-native-distribution",
          *   requirement: {
          *     kind: "upToNextMajorVersion",
          *     minimumVersion: "x.x.x"

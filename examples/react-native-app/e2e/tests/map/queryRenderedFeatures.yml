@@ -1,4 +1,4 @@
-appId: com.mapvina.reactnative.example
+appId: io.github.mapvina.reactnative.example
 name: Map queryRenderedFeatures
 env:
   TEST_GROUP: Map

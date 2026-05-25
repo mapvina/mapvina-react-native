@@ -1,32 +1,29 @@
 import type {
-  FilterSpecification,
-  LightSpecification,
-  StyleSpecification,
+    FilterSpecification,
+    LightSpecification,
+    StyleSpecification,
 } from "@mapvina/mapvina-gl-style-spec";
 import {
-  Component,
-  type ComponentProps,
-  memo,
-  type ReactElement,
-  type Ref,
-  useImperativeHandle,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
+    Component,
+    type ComponentProps,
+    memo,
+    type ReactElement,
+    type Ref,
+    useImperativeHandle,
+    useLayoutEffect,
+    useMemo,
+    useRef,
+    useState,
 } from "react";
 import {
-  type NativeSyntheticEvent,
-  Platform,
-  type ReactNativeElement,
-  StyleSheet,
-  View,
-  type ViewProps,
+    type NativeSyntheticEvent,
+    Platform,
+    type ReactNativeElement,
+    StyleSheet,
+    View,
+    type ViewProps,
 } from "react-native";
 
-import AndroidTextureMapViewNativeComponent from "./AndroidTextureMapViewNativeComponent";
-import MapViewNativeComponent from "./MapViewNativeComponent";
-import NativeMapViewModule from "./NativeMapViewModule";
 import { LogManager } from "../../modules/log/LogManager";
 import type { BaseProps } from "../../types/BaseProps";
 import type { LngLat } from "../../types/LngLat";
@@ -40,6 +37,9 @@ import { transformStyle } from "../../utils/StyleValue";
 import { convertToInternalStyle } from "../../utils/convertStyleSpec";
 import { findNodeHandle } from "../../utils/findNodeHandle";
 import { getNativeFilter } from "../../utils/getNativeFilter";
+import AndroidTextureMapViewNativeComponent from "./AndroidTextureMapViewNativeComponent";
+import MapViewNativeComponent from "./MapViewNativeComponent";
+import NativeMapViewModule from "./NativeMapViewModule";
 
 const styles = StyleSheet.create({
   flex1: { flex: 1 },
@@ -546,7 +546,7 @@ export interface MapProps extends BaseProps, ViewProps {
  *
  * @example Rendering a basic Map
  * ```tsx
- * <Map mapStyle="https://maps.mapvina.com/styles/v1/streets.json?key=public_key" />;
+ * <Map mapStyle="https://maps.mapvina.com/styles/v2/streets.json?key=public_key" />;
  * ```
  */
 export const Map = memo(

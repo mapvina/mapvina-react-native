@@ -9,7 +9,7 @@
 - (id)init {
   if (self = [super init]) {
     imageQueue = [[NSOperationQueue alloc] init];
-    imageQueue.name = @"com.mapvina.reactnative.DownloadImageQueue";
+    imageQueue.name = @"io.github.mapvina.reactnative.DownloadImageQueue";
   }
   return self;
 }

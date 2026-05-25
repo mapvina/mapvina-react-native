@@ -13,7 +13,7 @@ import { StyleSheet } from "react-native";
  *
  * - https://demo-tiles.fake.dev/v1/style.json – fake input
  * - → https://demotiles.mapvina.com/v1/style.json – domain swap
- * - → https://maps.mapvina.com/styles/v1/streets.json?key=public_key – strip /v1 with $1/$2
+ * - → https://maps.mapvina.com/styles/v2/streets.json?key=public_key – strip /v1 with $1/$2
  */
 export function TransformUrl() {
   useEffect(() => {
@@ -29,7 +29,7 @@ export function TransformUrl() {
     // Strip the /v1 version prefix using capture groups $1 and $2.
     // match guard ensures this only fires after the domain is already correct.
     // Input:  https://demotiles.mapvina.com/v1/style.json
-    // Output: https://maps.mapvina.com/styles/v1/streets.json?key=public_key
+    // Output: https://maps.mapvina.com/styles/v2/streets.json?key=public_key
     TransformRequestManager.addUrlTransform({
       id: "strip-version",
       match: /demotiles\.mapvina\.org/,

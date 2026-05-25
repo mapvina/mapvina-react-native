@@ -1,12 +1,12 @@
 import type { FilterSpecification } from "@mapvina/mapvina-gl-style-spec";
 import {
-  type LngLat,
-  type LngLatBounds,
-  Map,
-  type MapProps,
-  type MapRef,
-  type PixelPoint,
-  type PixelPointBounds,
+    type LngLat,
+    type LngLatBounds,
+    Map,
+    type MapProps,
+    type MapRef,
+    type PixelPoint,
+    type PixelPointBounds,
 } from "@mapvina/mapvina-react-native";
 import { fireEvent, render } from "@testing-library/react-native";
 import { createRef } from "react";
@@ -20,7 +20,7 @@ function renderMap(props: Omit<MapProps, "mapStyle"> = {}) {
 
   const result = render(
     <Map
-      mapStyle="https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
+      mapStyle="https://maps.mapvina.com/styles/v2/streets.json?key=public_key"
       {...props}
       testID={TEST_ID}
       ref={mapRef}

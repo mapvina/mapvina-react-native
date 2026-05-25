@@ -12,7 +12,7 @@ A view of a MapVina Native Map.
 **Rendering a basic Map**
 
 ```tsx
-<Map mapStyle="https://maps.mapvina.com/styles/v1/streets.json?key=public_key" />
+<Map mapStyle="https://maps.mapvina.com/styles/v2/streets.json?key=public_key" />
 ```
 
 _Also accepts props from: `ViewProps`_
@@ -37,7 +37,7 @@ Mapvina style - either a URL or a Style JSON.
 
 **Required:** Yes
 
-**See also:** [https://mapvina.com/mapvina-style-spec/](https://mapvina.com/mapvina-style-spec/)
+**See also:** [https://mapvina.io/github/mapvina-style-spec/](https://mapvina.io/github/mapvina-style-spec/)
 
 ### `light`
 

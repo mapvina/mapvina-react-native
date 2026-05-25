@@ -33,7 +33,7 @@ describe("Expo Plugin Android – getGradleProperties", () => {
     expect(result).toEqual([
       {
         type: "property",
-        key: "com.mapvina.reactnative.locationEngine",
+        key: "io.github.mapvina.reactnative.locationEngine",
         value: "google",
       },
     ]);
