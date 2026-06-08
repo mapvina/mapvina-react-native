@@ -1,7 +1,7 @@
 package io.github.mapvina.reactnative.components.sources.tilesources
 
 import android.content.Context
-import io.github.mapvina.android.style.sources.Source
+import com.mapvina.android.style.sources.Source
 import io.github.mapvina.reactnative.components.sources.MLRNSource
 
 abstract class MLRNTileSource<T : Source?>(

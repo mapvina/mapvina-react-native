@@ -50,7 +50,7 @@ async function runNativeFormatters() {
 
   await Promise.all(
     commands.map((cmd) =>
-      execAsync(cmd, { cwd: PACKAGE_PATH }).catch(() => {}),
+      execAsync(cmd, { cwd: PACKAGE_PATH }).catch(() => { }),
     ),
   );
 }
@@ -71,7 +71,8 @@ const ANDROID_OUTPUT_PATH = path.join(
   "src",
   "main",
   "java",
-  "org",
+  "io",
+  "github",
   "mapvina",
   "reactnative",
   "components",
@@ -160,15 +161,7 @@ export async function generateStyles() {
   }
 
   function getSupportedLayers(): LayerType[] {
-    return (
-      Object.keys(mapvinaGlStyleSpec.layer.type.values) as LayerType[]
-    ).filter((layerType) => {
-      const support = getAttributeSupport(
-        mapvinaGlStyleSpec.layer.type.values[layerType]["sdk-support"],
-      );
-
-      return support.basic.android && support.basic.ios;
-    });
+    return Object.keys(mapvinaGlStyleSpec.layer.type.values) as LayerType[];
   }
 
   function getSupportedProperties(
@@ -257,11 +250,13 @@ export async function generateStyles() {
     if (attr.private) {
       return false;
     }
-    const support = getAttributeSupport(attr["sdk-support"]);
-    return support.basic.android && support.basic.ios;
+    return true;
   }
 
-  function getAttributeSupport(sdkSupport: SdkSupport) {
+  function getAttributeSupport(sdkSupport: SdkSupport | undefined) {
+    if (!sdkSupport) {
+      return { basic: { android: true, ios: true }, data: { android: true, ios: true } };
+    }
     return {
       basic: {
         android: isVersionGTE(

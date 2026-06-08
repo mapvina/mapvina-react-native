@@ -3,7 +3,7 @@ package io.github.mapvina.reactnative.components.mapview
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
 import com.facebook.react.uimanager.ThemedReactContext
-import io.github.mapvina.android.maps.MapVinaMapOptions
+import com.mapvina.android.maps.MapVinaMapOptions
 
 @ReactModule(name = MLRNAndroidTextureMapViewManager.REACT_CLASS)
 class MLRNAndroidTextureMapViewManager(

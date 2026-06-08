@@ -23,7 +23,7 @@ export const getAndroidVersion = async () => {
   if (!cachedAndroidVersion) {
     cachedAndroidVersion = await getNativeVersion(
       ["android", "gradle.properties"],
-      /^org\.mapvina\.reactnative\.nativeVersion=(\d+\.\d+\.\d+)$/,
+      /^io\.github\.mapvina\.reactnative\.nativeVersion=(\d+\.\d+\.\d+)$/,
     );
   }
 

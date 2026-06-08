@@ -2,19 +2,18 @@
 // This file is auto-generated from scripts/src/templates/renderMLRNStyleFactory.ts
 package io.github.mapvina.reactnative.components.layer.style
 
-import io.github.mapvina.android.style.layers.BackgroundLayer
-import io.github.mapvina.android.style.layers.CircleLayer
-import io.github.mapvina.android.style.layers.ColorReliefLayer
-import io.github.mapvina.android.style.layers.FillExtrusionLayer
-import io.github.mapvina.android.style.layers.FillLayer
-import io.github.mapvina.android.style.layers.HeatmapLayer
-import io.github.mapvina.android.style.layers.HillshadeLayer
-import io.github.mapvina.android.style.layers.LineLayer
-import io.github.mapvina.android.style.layers.PropertyFactory
-import io.github.mapvina.android.style.layers.RasterLayer
-import io.github.mapvina.android.style.layers.SymbolLayer
-import io.github.mapvina.android.style.light.Light
-import io.github.mapvina.android.style.light.Position
+import com.mapvina.android.style.layers.BackgroundLayer
+import com.mapvina.android.style.layers.CircleLayer
+import com.mapvina.android.style.layers.FillExtrusionLayer
+import com.mapvina.android.style.layers.FillLayer
+import com.mapvina.android.style.layers.HeatmapLayer
+import com.mapvina.android.style.layers.HillshadeLayer
+import com.mapvina.android.style.layers.LineLayer
+import com.mapvina.android.style.layers.PropertyFactory
+import com.mapvina.android.style.layers.RasterLayer
+import com.mapvina.android.style.layers.SymbolLayer
+import com.mapvina.android.style.light.Light
+import com.mapvina.android.style.light.Position
 
 object MLRNStyleFactory {
     const val VALUE_KEY: String = "value"
@@ -255,6 +254,10 @@ object MLRNStyleFactory {
                     setIconAllowOverlap(layer, styleValue)
                 }
 
+                "iconOverlap" -> {
+                    setIconOverlap(layer, styleValue)
+                }
+
                 "iconIgnorePlacement" -> {
                     setIconIgnorePlacement(layer, styleValue)
                 }
@@ -387,6 +390,10 @@ object MLRNStyleFactory {
 
                 "textAllowOverlap" -> {
                     setTextAllowOverlap(layer, styleValue)
+                }
+
+                "textOverlap" -> {
+                    setTextOverlap(layer, styleValue)
                 }
 
                 "textIgnorePlacement" -> {
@@ -882,39 +889,6 @@ object MLRNStyleFactory {
 
                 "hillshadeMethod" -> {
                     setHillshadeMethod(layer, styleValue)
-                }
-            }
-        }
-    }
-
-    fun setColorReliefLayerStyle(
-        layer: ColorReliefLayer,
-        style: MLRNStyle,
-    ) {
-        val styleKeys = style.allStyleKeys
-
-        if (styleKeys.isEmpty()) {
-            return
-        }
-
-        for (styleKey in styleKeys) {
-            val styleValue = style.getStyleValueForKey(styleKey)
-
-            when (styleKey) {
-                "visibility" -> {
-                    setVisibility(layer, styleValue)
-                }
-
-                "colorReliefOpacity" -> {
-                    setColorReliefOpacity(layer, styleValue)
-                }
-
-                "colorReliefOpacityTransition" -> {
-                    setColorReliefOpacityTransition(layer, styleValue)
-                }
-
-                "colorReliefColor" -> {
-                    setColorReliefColor(layer, styleValue)
                 }
             }
         }
@@ -1504,6 +1478,13 @@ object MLRNStyleFactory {
         }
     }
 
+    fun setIconOverlap(
+        layer: SymbolLayer,
+        styleValue: MLRNStyleValue,
+    ) {
+        setIconAllowOverlap(layer, styleValue)
+    }
+
     fun setIconIgnorePlacement(
         layer: SymbolLayer,
         styleValue: MLRNStyleValue,
@@ -1869,6 +1850,13 @@ object MLRNStyleFactory {
         } else {
             layer.setProperties(PropertyFactory.textAllowOverlap(styleValue.getBoolean(VALUE_KEY)))
         }
+    }
+
+    fun setTextOverlap(
+        layer: SymbolLayer,
+        styleValue: MLRNStyleValue,
+    ) {
+        setTextAllowOverlap(layer, styleValue)
     }
 
     fun setTextIgnorePlacement(
@@ -2931,45 +2919,6 @@ object MLRNStyleFactory {
             layer.setProperties(PropertyFactory.hillshadeMethod(styleValue.getExpression()))
         } else {
             layer.setProperties(PropertyFactory.hillshadeMethod(styleValue.getString(VALUE_KEY)))
-        }
-    }
-
-    fun setVisibility(
-        layer: ColorReliefLayer,
-        styleValue: MLRNStyleValue,
-    ) {
-        layer.setProperties(PropertyFactory.visibility(styleValue.getString(VALUE_KEY)))
-    }
-
-    fun setColorReliefOpacity(
-        layer: ColorReliefLayer,
-        styleValue: MLRNStyleValue,
-    ) {
-        if (styleValue.isExpression()) {
-            layer.setProperties(PropertyFactory.colorReliefOpacity(styleValue.getExpression()))
-        } else {
-            layer.setProperties(PropertyFactory.colorReliefOpacity(styleValue.getFloat(VALUE_KEY)))
-        }
-    }
-
-    fun setColorReliefOpacityTransition(
-        layer: ColorReliefLayer,
-        styleValue: MLRNStyleValue,
-    ) {
-        val transition = styleValue.transition
-        if (transition != null) {
-            layer.colorReliefOpacityTransition = transition
-        }
-    }
-
-    fun setColorReliefColor(
-        layer: ColorReliefLayer,
-        styleValue: MLRNStyleValue,
-    ) {
-        if (styleValue.isExpression()) {
-            layer.setProperties(PropertyFactory.colorReliefColor(styleValue.getExpression()))
-        } else {
-            layer.setProperties(PropertyFactory.colorReliefColor(styleValue.getInt(VALUE_KEY)))
         }
     }
 

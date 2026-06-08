@@ -4,21 +4,21 @@ import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.WritableArray
 import com.facebook.react.bridge.WritableMap
-import io.github.mapvina.android.geometry.LatLng
-import io.github.mapvina.android.geometry.LatLngBounds
-import io.github.mapvina.android.geometry.LatLngQuad
-import io.github.mapvina.android.log.Logger
-import io.github.mapvina.geojson.Feature
-import io.github.mapvina.geojson.FeatureCollection
-import io.github.mapvina.geojson.Geometry
-import io.github.mapvina.geojson.GeometryCollection
-import io.github.mapvina.geojson.LineString
-import io.github.mapvina.geojson.MultiLineString
-import io.github.mapvina.geojson.MultiPoint
-import io.github.mapvina.geojson.MultiPolygon
-import io.github.mapvina.geojson.Point
-import io.github.mapvina.geojson.Polygon
-import io.github.mapvina.turf.TurfMeasurement
+import com.mapvina.android.geometry.LatLng
+import com.mapvina.android.geometry.LatLngBounds
+import com.mapvina.android.geometry.LatLngQuad
+import com.mapvina.android.log.Logger
+import com.mapvina.geojson.Feature
+import com.mapvina.geojson.FeatureCollection
+import com.mapvina.geojson.Geometry
+import com.mapvina.geojson.GeometryCollection
+import com.mapvina.geojson.LineString
+import com.mapvina.geojson.MultiLineString
+import com.mapvina.geojson.MultiPoint
+import com.mapvina.geojson.MultiPolygon
+import com.mapvina.geojson.Point
+import com.mapvina.geojson.Polygon
+import com.mapvina.turf.TurfMeasurement
 import java.util.stream.Collectors
 
 object GeoJSONUtils {

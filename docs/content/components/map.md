@@ -37,7 +37,7 @@ Mapvina style - either a URL or a Style JSON.
 
 **Required:** Yes
 
-**See also:** [https://mapvina.io/github/mapvina-style-spec/](https://mapvina.io/github/mapvina-style-spec/)
+**See also:** [https://mapvina.com/mapvina-style-spec/](https://mapvina.com/mapvina-style-spec/)
 
 ### `light`
 

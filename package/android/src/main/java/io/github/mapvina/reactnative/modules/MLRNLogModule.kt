@@ -4,8 +4,8 @@ import android.util.Log
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
-import io.github.mapvina.android.log.Logger
-import io.github.mapvina.android.log.LoggerDefinition
+import com.mapvina.android.log.Logger
+import com.mapvina.android.log.LoggerDefinition
 import io.github.mapvina.reactnative.NativeLogModuleSpec
 
 @ReactModule(name = MLRNLogModule.NAME)

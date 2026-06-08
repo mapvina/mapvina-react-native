@@ -6,10 +6,10 @@ import android.util.TypedValue
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReadableMap
-import io.github.mapvina.android.camera.CameraPosition
-import io.github.mapvina.android.maps.Style
-import io.github.mapvina.android.snapshotter.MapSnapshot
-import io.github.mapvina.android.snapshotter.MapSnapshotter
+import com.mapvina.android.camera.CameraPosition
+import com.mapvina.android.maps.Style
+import com.mapvina.android.snapshotter.MapSnapshot
+import com.mapvina.android.snapshotter.MapSnapshotter
 import io.github.mapvina.reactnative.NativeStaticMapModuleSpec
 import io.github.mapvina.reactnative.utils.BitmapUtils
 import io.github.mapvina.reactnative.utils.ConvertUtils
@@ -32,7 +32,7 @@ class MLRNStaticMapModule(
         readableMap: ReadableMap,
         promise: Promise,
     ) {
-        io.github.mapvina.android.storage.FileSource
+        com.mapvina.android.storage.FileSource
             .getInstance(reactContext)
             .activate()
 

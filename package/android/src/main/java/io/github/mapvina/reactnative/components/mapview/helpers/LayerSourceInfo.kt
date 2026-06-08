@@ -1,14 +1,14 @@
 package io.github.mapvina.reactnative.components.mapview.helpers
 
-import io.github.mapvina.android.style.layers.CircleLayer
-import io.github.mapvina.android.style.layers.FillExtrusionLayer
-import io.github.mapvina.android.style.layers.FillLayer
-import io.github.mapvina.android.style.layers.HeatmapLayer
-import io.github.mapvina.android.style.layers.HillshadeLayer
-import io.github.mapvina.android.style.layers.Layer
-import io.github.mapvina.android.style.layers.LineLayer
-import io.github.mapvina.android.style.layers.RasterLayer
-import io.github.mapvina.android.style.layers.SymbolLayer
+import com.mapvina.android.style.layers.CircleLayer
+import com.mapvina.android.style.layers.FillExtrusionLayer
+import com.mapvina.android.style.layers.FillLayer
+import com.mapvina.android.style.layers.HeatmapLayer
+import com.mapvina.android.style.layers.HillshadeLayer
+import com.mapvina.android.style.layers.Layer
+import com.mapvina.android.style.layers.LineLayer
+import com.mapvina.android.style.layers.RasterLayer
+import com.mapvina.android.style.layers.SymbolLayer
 
 internal class LayerSourceInfo(
     layer: Layer?,

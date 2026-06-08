@@ -9,7 +9,7 @@ sidebar_position: 4
 
 Layer is a style layer that renders geospatial data on the map.
 Follow the [MapVina Style
-Spec](https://mapvina.io/github/mapvina-style-spec/layers/) for Layer
+Spec](https://mapvina.com/mapvina-style-spec/layers/) for Layer
 definitions.
 
 **Basic Usage**

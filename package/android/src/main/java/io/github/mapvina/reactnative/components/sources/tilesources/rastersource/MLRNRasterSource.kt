@@ -1,7 +1,7 @@
 package io.github.mapvina.reactnative.components.sources.tilesources.rastersource
 
 import android.content.Context
-import io.github.mapvina.android.style.sources.RasterSource
+import com.mapvina.android.style.sources.RasterSource
 import io.github.mapvina.reactnative.components.sources.tilesources.MLRNTileSource
 
 class MLRNRasterSource(

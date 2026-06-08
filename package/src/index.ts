@@ -1,142 +1,82 @@
 export {
-  type CameraOptions,
-  type CameraEasing,
-  type CameraAnimationOptions,
-  type CameraCenterOptions,
-  type CameraBoundsOptions,
-  type CameraCenterStop,
-  type CameraBoundsStop,
-  type CameraStop,
+  Camera, type CameraAnimationOptions, type CameraBoundsOptions, type CameraBoundsStop, type CameraCenterOptions, type CameraCenterStop, type CameraEasing, type CameraOptions, type CameraProps, type CameraRef, type CameraStop,
   type InitialViewState,
   type TrackUserLocation,
-  type TrackUserLocationChangeEvent,
-  type CameraRef,
-  type CameraProps,
-  Camera,
+  type TrackUserLocationChangeEvent
 } from "./components/camera/Camera";
 
 export {
-  type ViewState,
-  type ViewStateChangeEvent,
-  type MapRef,
-  type MapProps,
-  Map,
+  Map, type MapProps, type MapRef, type ViewState,
+  type ViewStateChangeEvent
 } from "./components/map/Map";
 
 export {
-  type ViewAnnotationEvent,
-  type NativeViewAnnotationRef,
-  type ViewAnnotationRef,
-  type ViewAnnotationProps,
-  ViewAnnotation,
+  ViewAnnotation, type NativeViewAnnotationRef, type ViewAnnotationEvent, type ViewAnnotationProps, type ViewAnnotationRef
 } from "./components/annotations/view-annotation/ViewAnnotation";
 
 export {
-  type LayerAnnotationProps,
-  LayerAnnotation,
+  LayerAnnotation, type LayerAnnotationProps
 } from "./components/annotations/LayerAnnotation";
 
 export {
-  type CalloutProps,
-  Callout,
+  Callout, type CalloutProps
 } from "./components/annotations/callout/Callout";
 
-export { UserLocation } from "./components/user-location/UserLocation";
 export { NativeUserLocation } from "./components/user-location/NativeUserLocation";
+export { UserLocation } from "./components/user-location/UserLocation";
 export { useCurrentPosition } from "./hooks/useCurrentPosition";
 
 export {
-  type ImageSourceProps,
-  ImageSource,
+  ImageSource, type ImageSourceProps
 } from "./components/sources/image-source/ImageSource";
 
 export {
-  type GeoJSONSourceRef,
-  type GeoJSONSourceProps,
-  GeoJSONSource,
+  GeoJSONSource, type GeoJSONSourceProps, type GeoJSONSourceRef
 } from "./components/sources/geojson-source/GeoJSONSource";
 
 export {
-  type RasterSourceProps,
-  RasterSource,
-} from "./components/sources/raster-source/RasterSource";
-export {
-  type RasterDEMSourceProps,
-  RasterDEMSource,
+  RasterDEMSource, type RasterDEMSourceProps
 } from "./components/sources/raster-dem-source/RasterDEMSource";
+export {
+  RasterSource, type RasterSourceProps
+} from "./components/sources/raster-source/RasterSource";
 
 export {
-  type VectorSourceRef,
-  type VectorSourceProps,
-  VectorSource,
+  VectorSource, type VectorSourceProps, type VectorSourceRef
 } from "./components/sources/vector-source/VectorSource";
 
 export {
-  Layer,
-  type LayerProps,
-  type SourceLayerProps,
-  type FillLayerProps,
-  type LineLayerProps,
-  type SymbolLayerProps,
-  type CircleLayerProps,
-  type HeatmapLayerProps,
-  type FillExtrusionLayerProps,
-  type RasterLayerProps,
-  type BackgroundLayerProps,
+  Layer, type BackgroundLayerProps, type CircleLayerProps, type FillExtrusionLayerProps, type FillLayerProps, type HeatmapLayerProps, type LayerProps, type LineLayerProps, type RasterLayerProps, type SourceLayerProps, type SymbolLayerProps
 } from "./components/layer/Layer";
 
 export type {
-  // Layers
-  LayerSpecification,
   BackgroundLayerSpecification,
-  CircleLayerSpecification,
-  ColorReliefLayerSpecification,
-  FillLayerSpecification,
-  FillExtrusionLayerSpecification,
-  HeatmapLayerSpecification,
-  HillshadeLayerSpecification,
-  LineLayerSpecification,
-  RasterLayerSpecification,
-  SymbolLayerSpecification,
-
+  CircleLayerSpecification, FillExtrusionLayerSpecification, FillLayerSpecification,
+  // Filter
+  FilterSpecification, GeoJSONSourceSpecification, HeatmapLayerSpecification,
+  HillshadeLayerSpecification, ImageSourceSpecification,
+  // Layers
+  LayerSpecification, LightSpecification, LineLayerSpecification, ProjectionSpecification, RasterDEMSourceSpecification, RasterLayerSpecification, RasterSourceSpecification, SkySpecification,
   // Sources
   SourceSpecification,
-  GeoJSONSourceSpecification,
-  ImageSourceSpecification,
-  RasterSourceSpecification,
-  RasterDEMSourceSpecification,
-  VectorSourceSpecification,
-  VideoSourceSpecification,
-
-  // Filter
-  FilterSpecification,
-
   // Style
-  StyleSpecification,
-  SkySpecification,
-  LightSpecification,
-  TerrainSpecification,
-  ProjectionSpecification,
+  StyleSpecification, SymbolLayerSpecification, TerrainSpecification, VectorSourceSpecification,
+  VideoSourceSpecification
 } from "@mapvina/mapvina-gl-style-spec";
 
 export {
-  type ImageSourceWithSdf,
-  type ImageEntry,
-  type ImagesProps,
-  Images,
+  Images, type ImageEntry, type ImageSourceWithSdf, type ImagesProps
 } from "./components/images/Images";
 
 export {
-  type NativeMarkerRef,
-  type MarkerEvent,
+  Marker, type MarkerEvent,
   type MarkerProps,
-  type MarkerRef,
-  Marker,
+  type MarkerRef, type NativeMarkerRef
 } from "./components/annotations/marker/Marker";
 
 export {
   LocationManager,
-  type GeolocationPosition,
+  type GeolocationPosition
 } from "./modules/location/LocationManager";
 
 export { LogManager, type LogLevel } from "./modules/log/LogManager";
@@ -147,47 +87,26 @@ export {
   OfflineManager,
   type OfflinePackCreateOptions,
   type OfflinePackDownloadState,
-  type OfflinePackError,
-  type OfflinePackProgressListener,
-  type OfflinePackErrorListener,
+  type OfflinePackError, type OfflinePackErrorListener, type OfflinePackProgressListener
 } from "./modules/offline/OfflineManager";
 export {
   OfflinePack,
-  type OfflinePackStatus,
+  type OfflinePackStatus
 } from "./modules/offline/OfflinePack";
 
 export {
-  StaticMapImageManager,
-  type StaticMapOptions,
-  type StaticMapCenterOptions,
-  type StaticMapBoundsOptions,
-  type StaticMapCreateOptions,
+  StaticMapImageManager, type StaticMapBoundsOptions, type StaticMapCenterOptions, type StaticMapCreateOptions, type StaticMapOptions
 } from "./modules/static-map/StaticMapManager";
 
 export {
-  TransformRequestManager,
-  type TransformOptions,
-  type UrlTransformOptions,
-  type UrlSearchParamOptions,
-  type HeaderOptions,
+  TransformRequestManager, type HeaderOptions, type TransformOptions, type UrlSearchParamOptions, type UrlTransformOptions
 } from "./modules/transform-request/TransformRequestManager";
 
 export type { Anchor } from "./types/Anchor";
 export type { LngLat } from "./types/LngLat";
 export type { LngLatBounds } from "./types/LngLatBounds";
 export type {
-  FillLayerStyle,
-  LineLayerStyle,
-  SymbolLayerStyle,
-  CircleLayerStyle,
-  ColorReliefLayerStyle,
-  HeatmapLayerStyle,
-  FillExtrusionLayerStyle,
-  RasterLayerStyle,
-  HillshadeLayerStyle,
-  BackgroundLayerStyle,
-  LightLayerStyle,
-  Expression,
+  BackgroundLayerStyle, CircleLayerStyle, Expression, FillExtrusionLayerStyle, FillLayerStyle, HeatmapLayerStyle, HillshadeLayerStyle, LightLayerStyle, LineLayerStyle, RasterLayerStyle, SymbolLayerStyle
 } from "./types/MapVinaRNStyles";
 export type { PixelPoint } from "./types/PixelPoint";
 export type { PixelPointBounds } from "./types/PixelPointBounds";

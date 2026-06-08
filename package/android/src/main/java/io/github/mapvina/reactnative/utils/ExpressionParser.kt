@@ -3,7 +3,7 @@ package io.github.mapvina.reactnative.utils
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
 import com.google.gson.JsonArray
-import io.github.mapvina.android.style.expressions.Expression
+import com.mapvina.android.style.expressions.Expression
 import io.github.mapvina.reactnative.utils.ConvertUtils.toJsonArray
 import io.github.mapvina.reactnative.utils.ConvertUtils.typedToJsonElement
 import java.util.Locale

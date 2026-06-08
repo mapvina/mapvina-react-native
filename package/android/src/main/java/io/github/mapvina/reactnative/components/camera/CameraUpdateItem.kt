@@ -1,9 +1,9 @@
 package io.github.mapvina.reactnative.components.camera
 
-import io.github.mapvina.android.camera.CameraUpdate
-import io.github.mapvina.android.constants.MapVinaConstants
-import io.github.mapvina.android.maps.MapVinaMap
-import io.github.mapvina.android.maps.MapVinaMap.CancelableCallback
+import com.mapvina.android.camera.CameraUpdate
+import com.mapvina.android.constants.MapVinaConstants
+import com.mapvina.android.maps.MapVinaMap
+import com.mapvina.android.maps.MapVinaMap.CancelableCallback
 import io.github.mapvina.reactnative.components.camera.constants.CameraEasing
 import java.lang.ref.WeakReference
 import java.util.concurrent.ExecutionException

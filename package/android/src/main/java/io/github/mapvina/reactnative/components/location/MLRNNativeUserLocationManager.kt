@@ -7,7 +7,7 @@ import com.facebook.react.uimanager.ViewManagerDelegate
 import com.facebook.react.uimanager.annotations.ReactProp
 import com.facebook.react.viewmanagers.MLRNNativeUserLocationManagerDelegate
 import com.facebook.react.viewmanagers.MLRNNativeUserLocationManagerInterface
-import io.github.mapvina.android.location.modes.RenderMode
+import com.mapvina.android.location.modes.RenderMode
 
 @ReactModule(name = MLRNNativeUserLocationManager.REACT_CLASS)
 class MLRNNativeUserLocationManager :

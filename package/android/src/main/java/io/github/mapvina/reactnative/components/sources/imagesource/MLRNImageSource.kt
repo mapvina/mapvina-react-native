@@ -4,8 +4,8 @@ import android.content.Context
 import android.net.Uri
 import android.util.Log
 import com.facebook.react.views.imagehelper.ResourceDrawableIdHelper
-import io.github.mapvina.android.geometry.LatLngQuad
-import io.github.mapvina.android.style.sources.ImageSource
+import com.mapvina.android.geometry.LatLngQuad
+import com.mapvina.android.style.sources.ImageSource
 import io.github.mapvina.reactnative.components.sources.MLRNSource
 import java.net.URL
 

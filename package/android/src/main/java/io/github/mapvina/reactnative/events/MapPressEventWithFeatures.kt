@@ -2,8 +2,8 @@ package io.github.mapvina.reactnative.events
 
 import android.graphics.PointF
 import com.facebook.react.bridge.WritableMap
-import io.github.mapvina.android.geometry.LatLng
-import io.github.mapvina.geojson.Feature
+import com.mapvina.android.geometry.LatLng
+import com.mapvina.geojson.Feature
 import io.github.mapvina.reactnative.utils.GeoJSONUtils
 
 class MapPressEventWithFeatures(

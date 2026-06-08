@@ -1,9 +1,9 @@
 import type { CircleLayerSpecification } from "@mapvina/mapvina-gl-style-spec";
 import { memo } from "react";
 
-import { UserLocationPuckHeading } from "./UserLocationPuckHeading";
 import type { BaseProps } from "../../types/BaseProps";
 import { Layer } from "../layer/Layer";
+import { UserLocationPuckHeading } from "./UserLocationPuckHeading";
 
 const blue = "#33B5E5";
 
@@ -12,7 +12,6 @@ const CIRCLE_LAYERS_PAINT = {
     "circle-color": blue,
     "circle-opacity": 0.2,
     "circle-pitch-alignment": "map",
-    "circle-radius-transition": { duration: 300, delay: 0 },
   },
   white: {
     "circle-radius": 9,

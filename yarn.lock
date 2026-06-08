@@ -5804,14 +5804,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@maplibre-react-native/examples@workspace:*, @maplibre-react-native/examples@workspace:examples/shared":
+"@mapvina-react-native/examples@workspace:*, @mapvina-react-native/examples@workspace:examples/shared":
   version: 0.0.0-use.local
-  resolution: "@maplibre-react-native/examples@workspace:examples/shared"
+  resolution: "@mapvina-react-native/examples@workspace:examples/shared"
   dependencies:
     "@babel/core": "npm:7.29.0"
     "@babel/plugin-transform-export-namespace-from": "npm:7.27.1"
     "@jest/expect-utils": "npm:29.7.0"
-    "@maplibre/maplibre-react-native": "workspace:*"
+    "@mapvina/mapvina-react-native": "workspace:*"
     "@react-native-masked-view/masked-view": "npm:0.3.2"
     "@react-navigation/native": "npm:7.2.4"
     "@react-navigation/stack": "npm:7.9.1"
@@ -5850,30 +5850,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@maplibre/maplibre-gl-style-spec@npm:24.8.5":
-  version: 24.8.5
-  resolution: "@maplibre/maplibre-gl-style-spec@npm:24.8.5"
+"@mapvina/mapvina-gl-style-spec@npm:1.0.1, @mapvina/mapvina-gl-style-spec@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@mapvina/mapvina-gl-style-spec@npm:1.0.1"
   dependencies:
     "@mapbox/jsonlint-lines-primitives": "npm:~2.0.2"
     "@mapbox/unitbezier": "npm:^0.0.1"
     json-stringify-pretty-compact: "npm:^4.0.0"
     minimist: "npm:^1.2.8"
     quickselect: "npm:^3.0.0"
+    rw: "npm:^1.3.3"
     tinyqueue: "npm:^3.0.0"
   bin:
     gl-style-format: dist/gl-style-format.mjs
     gl-style-migrate: dist/gl-style-migrate.mjs
     gl-style-validate: dist/gl-style-validate.mjs
-  checksum: 10c0/54bf2272dfcbdaafddb0883a193d906e009e0c3a90d346b83501f75f5291fd1eb9663bb2b5b45d36abb906055b5e16d0f4b45996c747b418aa624ff9604d74e4
+  checksum: 10c0/b1b64a0663517e266007ff0d50d7294aa2a137d3ae0eac85a97d697682bc7eeb37b01512cf38defdfe185010bcad1fd039d5967b887a2e5df8d39e604ce2a416
   languageName: node
   linkType: hard
 
-"@maplibre/maplibre-react-native@workspace:*, @maplibre/maplibre-react-native@workspace:package":
+"@mapvina/mapvina-react-native@workspace:*, @mapvina/mapvina-react-native@workspace:package":
   version: 0.0.0-use.local
-  resolution: "@maplibre/maplibre-react-native@workspace:package"
+  resolution: "@mapvina/mapvina-react-native@workspace:package"
   dependencies:
     "@expo/config-plugins": "npm:55.0.8"
-    "@maplibre/maplibre-gl-style-spec": "npm:24.8.5"
+    "@mapvina/mapvina-gl-style-spec": "npm:^1.0.1"
     "@react-native-community/cli": "npm:20.1.3"
     "@react-native/babel-preset": "npm:0.85.3"
     "@react-native/jest-preset": "npm:0.85.3"
@@ -13181,8 +13182,8 @@ __metadata:
   resolution: "expo-app@workspace:examples/expo-app"
   dependencies:
     "@babel/core": "npm:7.29.0"
-    "@maplibre-react-native/examples": "workspace:*"
-    "@maplibre/maplibre-react-native": "workspace:*"
+    "@mapvina-react-native/examples": "workspace:*"
+    "@mapvina/mapvina-react-native": "workspace:*"
     "@react-native-masked-view/masked-view": "npm:0.3.2"
     "@types/node": "npm:24.12.2"
     "@types/react": "npm:19.2.14"
@@ -22665,7 +22666,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:7.29.0"
     "@babel/plugin-transform-export-namespace-from": "npm:7.27.1"
-    "@maplibre-react-native/examples": "workspace:*"
+    "@mapvina-react-native/examples": "workspace:*"
     "@react-native-community/cli": "npm:20.1.3"
     "@react-native-community/cli-platform-android": "npm:20.1.3"
     "@react-native-community/cli-platform-ios": "npm:20.1.3"
@@ -23871,6 +23872,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rw@npm:^1.3.3":
+  version: 1.3.3
+  resolution: "rw@npm:1.3.3"
+  checksum: 10c0/b1e1ef37d1e79d9dc7050787866e30b6ddcb2625149276045c262c6b4d53075ddc35f387a856a8e76f0d0df59f4cd58fe24707e40797ebee66e542b840ed6a53
+  languageName: node
+  linkType: hard
+
 "safe-array-concat@npm:^1.1.2":
   version: 1.1.2
   resolution: "safe-array-concat@npm:1.1.2"
@@ -24009,7 +24017,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "scripts@workspace:scripts"
   dependencies:
-    "@maplibre/maplibre-gl-style-spec": "npm:24.8.5"
+    "@mapvina/mapvina-gl-style-spec": "npm:1.0.1"
     "@microsoft/tsdoc": "npm:0.16.0"
     "@types/node": "npm:24.12.2"
     eslint: "npm:9.39.4"

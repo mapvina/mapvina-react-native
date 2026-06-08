@@ -4,23 +4,22 @@ import android.content.Context
 import com.facebook.common.logging.FLog
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
-import io.github.mapvina.android.location.LocationComponentConstants
-import io.github.mapvina.android.maps.MapVinaMap
-import io.github.mapvina.android.maps.Style
-import io.github.mapvina.android.style.expressions.Expression
-import io.github.mapvina.android.style.layers.BackgroundLayer
-import io.github.mapvina.android.style.layers.CircleLayer
-import io.github.mapvina.android.style.layers.ColorReliefLayer
-import io.github.mapvina.android.style.layers.FillExtrusionLayer
-import io.github.mapvina.android.style.layers.FillLayer
-import io.github.mapvina.android.style.layers.HeatmapLayer
-import io.github.mapvina.android.style.layers.HillshadeLayer
-import io.github.mapvina.android.style.layers.Layer
-import io.github.mapvina.android.style.layers.LineLayer
-import io.github.mapvina.android.style.layers.Property
-import io.github.mapvina.android.style.layers.PropertyFactory
-import io.github.mapvina.android.style.layers.RasterLayer
-import io.github.mapvina.android.style.layers.SymbolLayer
+import com.mapvina.android.location.LocationComponentConstants
+import com.mapvina.android.maps.MapVinaMap
+import com.mapvina.android.maps.Style
+import com.mapvina.android.style.expressions.Expression
+import com.mapvina.android.style.layers.BackgroundLayer
+import com.mapvina.android.style.layers.CircleLayer
+import com.mapvina.android.style.layers.FillExtrusionLayer
+import com.mapvina.android.style.layers.FillLayer
+import com.mapvina.android.style.layers.HeatmapLayer
+import com.mapvina.android.style.layers.HillshadeLayer
+import com.mapvina.android.style.layers.Layer
+import com.mapvina.android.style.layers.LineLayer
+import com.mapvina.android.style.layers.Property
+import com.mapvina.android.style.layers.PropertyFactory
+import com.mapvina.android.style.layers.RasterLayer
+import com.mapvina.android.style.layers.SymbolLayer
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.layer.style.MLRNStyle
 import io.github.mapvina.reactnative.components.layer.style.MLRNStyleFactory
@@ -158,12 +157,6 @@ class MLRNLayer(
                 layer
             }
 
-            "color-relief" -> {
-                val layer = ColorReliefLayer(mID, mSourceID)
-                if (mSourceLayerID != null) layer.setSourceLayer(mSourceLayerID)
-                layer
-            }
-
             "fill" -> {
                 val layer = FillLayer(mID, mSourceID)
                 if (mSourceLayerID != null) layer.setSourceLayer(mSourceLayerID)
@@ -217,7 +210,6 @@ class MLRNLayer(
         when (mLayer) {
             is BackgroundLayer -> MLRNStyleFactory.setBackgroundLayerStyle(mLayer as BackgroundLayer, style)
             is CircleLayer -> MLRNStyleFactory.setCircleLayerStyle(mLayer as CircleLayer, style)
-            is ColorReliefLayer -> MLRNStyleFactory.setColorReliefLayerStyle(mLayer as ColorReliefLayer, style)
             is FillLayer -> MLRNStyleFactory.setFillLayerStyle(mLayer as FillLayer, style)
             is FillExtrusionLayer -> MLRNStyleFactory.setFillExtrusionLayerStyle(mLayer as FillExtrusionLayer, style)
             is HeatmapLayer -> MLRNStyleFactory.setHeatmapLayerStyle(mLayer as HeatmapLayer, style)
@@ -231,7 +223,6 @@ class MLRNLayer(
     private fun updateFilter(expression: Expression?) {
         when (mLayer) {
             is CircleLayer -> (mLayer as CircleLayer).setFilter(expression!!)
-            is ColorReliefLayer -> (mLayer as ColorReliefLayer).setFilter(expression!!)
             is FillLayer -> (mLayer as FillLayer).setFilter(expression!!)
             is FillExtrusionLayer -> (mLayer as FillExtrusionLayer).setFilter(expression!!)
             is HeatmapLayer -> (mLayer as HeatmapLayer).setFilter(expression!!)
@@ -243,7 +234,6 @@ class MLRNLayer(
     private fun applySourceLayer() {
         when (mLayer) {
             is CircleLayer -> (mLayer as CircleLayer).setSourceLayer(mSourceLayerID)
-            is ColorReliefLayer -> (mLayer as ColorReliefLayer).setSourceLayer(mSourceLayerID)
             is FillLayer -> (mLayer as FillLayer).setSourceLayer(mSourceLayerID)
             is FillExtrusionLayer -> (mLayer as FillExtrusionLayer).setSourceLayer(mSourceLayerID)
             is HeatmapLayer -> (mLayer as HeatmapLayer).setSourceLayer(mSourceLayerID)

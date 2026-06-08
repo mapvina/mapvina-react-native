@@ -80,7 +80,7 @@ coordinate.
 
 **Default:** `"center"`
 
-**See also:** [https://mapvina.io/github/mapvina-gl-js/docs/API/type-aliases/PositionAnchor/](https://mapvina.io/github/mapvina-gl-js/docs/API/type-aliases/PositionAnchor/)
+**See also:** [https://mapvina.com/mapvina-gl-js/docs/API/type-aliases/PositionAnchor/](https://mapvina.com/mapvina-gl-js/docs/API/type-aliases/PositionAnchor/)
 
 ### `offset`
 
@@ -93,7 +93,7 @@ indicate left and up.
 
 **Default:** `[0, 0]`
 
-**See also:** [https://mapvina.io/github/mapvina-gl-js/docs/API/type-aliases/MarkerOptions/#offset](https://mapvina.io/github/mapvina-gl-js/docs/API/type-aliases/MarkerOptions/#offset)
+**See also:** [https://mapvina.com/mapvina-gl-js/docs/API/type-aliases/MarkerOptions/#offset](https://mapvina.com/mapvina-gl-js/docs/API/type-aliases/MarkerOptions/#offset)
 
 ### `onPress`
 

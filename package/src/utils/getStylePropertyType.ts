@@ -60,6 +60,7 @@ const STYLE_MAP = {
   symbolSortKey: StyleType.Constant,
   symbolZOrder: StyleType.Enum,
   iconAllowOverlap: StyleType.Constant,
+  iconOverlap: StyleType.Enum,
   iconIgnorePlacement: StyleType.Constant,
   iconOptional: StyleType.Constant,
   iconRotationAlignment: StyleType.Enum,
@@ -93,6 +94,7 @@ const STYLE_MAP = {
   textTransform: StyleType.Enum,
   textOffset: StyleType.Constant,
   textAllowOverlap: StyleType.Constant,
+  textOverlap: StyleType.Enum,
   textIgnorePlacement: StyleType.Constant,
   textOptional: StyleType.Constant,
   iconOpacity: StyleType.Constant,
@@ -194,10 +196,6 @@ const STYLE_MAP = {
   hillshadeAccentColor: StyleType.Color,
   hillshadeAccentColorTransition: StyleType.Transition,
   hillshadeMethod: StyleType.Enum,
-
-  colorReliefOpacity: StyleType.Constant,
-  colorReliefOpacityTransition: StyleType.Transition,
-  colorReliefColor: StyleType.Color,
 
   backgroundColor: StyleType.Color,
   backgroundColorTransition: StyleType.Transition,

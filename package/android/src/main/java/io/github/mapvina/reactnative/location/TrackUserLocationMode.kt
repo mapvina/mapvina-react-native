@@ -1,6 +1,6 @@
 package io.github.mapvina.reactnative.location
 
-import io.github.mapvina.android.location.modes.CameraMode
+import com.mapvina.android.location.modes.CameraMode
 
 object TrackUserLocationMode {
     const val NONE: Int = 0

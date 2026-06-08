@@ -9,8 +9,8 @@ import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.WritableMap
 import com.facebook.react.bridge.WritableNativeMap
-import io.github.mapvina.android.location.engine.LocationEngineCallback
-import io.github.mapvina.android.location.engine.LocationEngineResult
+import com.mapvina.android.location.engine.LocationEngineCallback
+import com.mapvina.android.location.engine.LocationEngineResult
 import io.github.mapvina.reactnative.NativeLocationModuleSpec
 import io.github.mapvina.reactnative.location.LocationManager
 import io.github.mapvina.reactnative.location.LocationManager.OnUserLocationChange

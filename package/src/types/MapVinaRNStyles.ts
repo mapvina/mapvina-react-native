@@ -150,7 +150,7 @@ export interface FillLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * Whether or not the fill should be antialiased.
    */
@@ -223,7 +223,7 @@ export interface LineLayerStyle {
   /**
    * The display of line endings.
    */
-  lineCap?: Value<"butt" | "round" | "square", ["zoom", "feature"]>;
+  lineCap?: Value<"butt" | "round" | "square", ["zoom"]>;
   /**
    * The display of lines when joining.
    */
@@ -231,11 +231,11 @@ export interface LineLayerStyle {
   /**
    * Used to automatically convert miter joins to bevel joins for sharp angles.
    */
-  lineMiterLimit?: Value<number, ["zoom", "feature"]>;
+  lineMiterLimit?: Value<number, ["zoom"]>;
   /**
    * Used to automatically convert round joins to miter joins for shallow angles.
    */
-  lineRoundLimit?: Value<number, ["zoom", "feature"]>;
+  lineRoundLimit?: Value<number, ["zoom"]>;
   /**
    * Sorts features in ascending order based on this value. Features with a higher
    * sort key will appear above features with a lower sort key.
@@ -244,7 +244,7 @@ export interface LineLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * The opacity at which the line will be drawn.
    */
@@ -317,16 +317,14 @@ export interface LineLayerStyle {
   /**
    * Specifies the lengths of the alternating dashes and gaps that form the dash
    * pattern. The lengths are later scaled by the line width. To convert a dash
-   * length to pixels, multiply the length by the current line width. GeoJSON
-   * sources with `lineMetrics: true` specified won't render dashed lines to the
-   * expected scale. ZoomDependent expressions will be evaluated only at integer
-   * zoom levels. The only way to create an array value is using
-   * `["literal", [...]]` ; arrays cannot be read from or derived from feature
-   * properties.
+   * length to pixels, multiply the length by the current line width. Note that
+   * GeoJSON sources with `lineMetrics: true` specified won't render dashed lines
+   * to the expected scale. Also note that zoomDependent expressions will be
+   * evaluated only at integer zoom levels.
    *
    * @disabledBy linePattern
    */
-  lineDasharray?: Value<number[], ["zoom", "feature"]>;
+  lineDasharray?: Value<number[], ["zoom"]>;
   /**
    * The transition affecting any changes to this layer's lineDasharray property.
    */
@@ -396,6 +394,14 @@ export interface SymbolLayerStyle {
    * @disabledBy iconOverlap
    */
   iconAllowOverlap?: Value<boolean, ["zoom"]>;
+  /**
+   * Allows for control over whether to show an icon when it overlaps other
+   * symbols on the map. If `iconOverlap` is not set, `iconAllowOverlap` is used
+   * instead.
+   *
+   * @requires iconImage
+   */
+  iconOverlap?: Value<"never" | "always" | "cooperative", ["zoom"]>;
   /**
    * If true, other symbols can be visible even if they collide with the icon.
    *
@@ -677,6 +683,14 @@ export interface SymbolLayerStyle {
    */
   textAllowOverlap?: Value<boolean, ["zoom"]>;
   /**
+   * Allows for control over whether to show symbol text when it overlaps other
+   * symbols on the map. If `textOverlap` is not set, `textAllowOverlap` is used
+   * instead
+   *
+   * @requires textField
+   */
+  textOverlap?: Value<"never" | "always" | "cooperative", ["zoom"]>;
+  /**
    * If true, other symbols can be visible even if they collide with the text.
    *
    * @requires textField
@@ -692,7 +706,7 @@ export interface SymbolLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * The opacity at which the icon will be drawn.
    *
@@ -848,7 +862,7 @@ export interface CircleLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * Circle radius.
    */
@@ -943,7 +957,7 @@ export interface HeatmapLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * Radius of influence of one heatmap point in pixels. Increasing the value
    * makes the heatmap smoother, but less detailed.
@@ -991,7 +1005,7 @@ export interface FillExtrusionLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * The opacity of the entire fill extrusion layer. This is rendered on a
    * perLayer, not perFeature, basis, and dataDriven styling is not available.
@@ -1080,7 +1094,7 @@ export interface RasterLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * The opacity at which the image will be drawn.
    */
@@ -1137,8 +1151,7 @@ export interface RasterLayerStyle {
   rasterContrastTransition?: Transition;
   /**
    * The resampling/interpolation method to use for overscaling, also known as
-   * texture magnification filter. It is advised to use the generic `resampling`
-   *  paint property instead.
+   * texture magnification filter
    */
   rasterResampling?: Value<"linear" | "nearest", ["zoom"]>;
   /**
@@ -1155,7 +1168,7 @@ export interface HillshadeLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * The direction of the light source(s) used to generate the hillshading with 0
    * as the top of the viewport if `hillshadeIlluminationAnchor` is set to
@@ -1217,9 +1230,7 @@ export interface HillshadeLayerStyle {
   hillshadeAccentColorTransition?: Transition;
   /**
    * The hillshade algorithm to use, one of `standard` , `basic` , `combined` ,
-   * `igor` , or `multidirectional` . ![Visual comparison of standard, basic,
-   * igor, combined, and multidirectional
-   * hillshadeMethod](assets/hillshade_methods.png)
+   * `igor` , or `multidirectional` . ![image](assets/hillshade_methods.png)
    */
   hillshadeMethod?: Value<
     "standard" | "basic" | "combined" | "igor" | "multidirectional",
@@ -1230,35 +1241,11 @@ export interface HillshadeLayerStyle {
 /**
  * @deprecated
  */
-export interface ColorReliefLayerStyle {
-  /**
-   * Whether this layer is displayed.
-   */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
-  /**
-   * The opacity at which the colorRelief will be drawn.
-   */
-  colorReliefOpacity?: Value<number, ["zoom"]>;
-  /**
-   * The transition affecting any changes to this layer's colorReliefOpacity
-   * property.
-   */
-  colorReliefOpacityTransition?: Transition;
-  /**
-   * Defines the color of each pixel based on its elevation. Should be an
-   * expression that uses `["elevation"]` as input.
-   */
-  colorReliefColor?: Value<string, ["elevation"]>;
-}
-
-/**
- * @deprecated
- */
 export interface BackgroundLayerStyle {
   /**
    * Whether this layer is displayed.
    */
-  visibility?: Value<"visible" | "none", ["global-state"]>;
+  visibility?: "visible" | "none";
   /**
    * The color with which the background will be drawn.
    *
@@ -1344,6 +1331,5 @@ export type AllLayerStyle =
   | FillExtrusionLayerStyle
   | RasterLayerStyle
   | HillshadeLayerStyle
-  | ColorReliefLayerStyle
   | BackgroundLayerStyle
   | LightLayerStyle;

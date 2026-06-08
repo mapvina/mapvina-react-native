@@ -5,7 +5,7 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
 import okhttp3.Dispatcher
 import okhttp3.OkHttpClient
-import io.github.mapvina.android.module.http.HttpRequestUtil
+import com.mapvina.android.module.http.HttpRequestUtil
 import io.github.mapvina.reactnative.NativeTransformRequestModuleSpec
 
 @ReactModule(name = MLRNTransformRequestModule.NAME)

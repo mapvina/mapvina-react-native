@@ -5,8 +5,8 @@ import android.util.Log
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.location.LocationCallback
-import io.github.mapvina.android.location.engine.LocationEngine
-import io.github.mapvina.android.location.engine.LocationEngineProxy
+import com.mapvina.android.location.engine.LocationEngine
+import com.mapvina.android.location.engine.LocationEngineProxy
 
 class GoogleLocationEngineProvider : LocationEngineProvidable {
     override fun getLocationEngine(context: Context): LocationEngine {

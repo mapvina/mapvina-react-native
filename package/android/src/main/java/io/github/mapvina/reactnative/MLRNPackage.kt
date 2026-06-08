@@ -76,113 +76,53 @@ class MLRNPackage : BaseReactPackage() {
 
     override fun getReactModuleInfoProvider(): ReactModuleInfoProvider =
         ReactModuleInfoProvider {
-            val moduleInfos: MutableMap<String, ReactModuleInfo> = HashMap()
+            val moduleInfos = HashMap<String, ReactModuleInfo>()
 
-            moduleInfos[MLRNMapViewModule.NAME] =
-                ReactModuleInfo(
-                    MLRNMapViewModule.NAME,
-                    MLRNMapViewModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = true,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNMapViewModule.NAME,
+                ReactModuleInfo(MLRNMapViewModule.NAME, MLRNMapViewModule.NAME,
+                    false, true, false, true))
 
-            moduleInfos[MLRNCameraModule.NAME] =
-                ReactModuleInfo(
-                    MLRNCameraModule.NAME,
-                    MLRNCameraModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNCameraModule.NAME,
+                ReactModuleInfo(MLRNCameraModule.NAME, MLRNCameraModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNGeoJSONSourceModule.NAME] =
-                ReactModuleInfo(
-                    MLRNGeoJSONSourceModule.NAME,
-                    MLRNGeoJSONSourceModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNGeoJSONSourceModule.NAME,
+                ReactModuleInfo(MLRNGeoJSONSourceModule.NAME, MLRNGeoJSONSourceModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNVectorSourceModule.NAME] =
-                ReactModuleInfo(
-                    MLRNVectorSourceModule.NAME,
-                    MLRNVectorSourceModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNVectorSourceModule.NAME,
+                ReactModuleInfo(MLRNVectorSourceModule.NAME, MLRNVectorSourceModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNOfflineModule.NAME] =
-                ReactModuleInfo(
-                    MLRNOfflineModule.NAME,
-                    MLRNOfflineModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNOfflineModule.NAME,
+                ReactModuleInfo(MLRNOfflineModule.NAME, MLRNOfflineModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNStaticMapModule.NAME] =
-                ReactModuleInfo(
-                    MLRNStaticMapModule.NAME,
-                    MLRNStaticMapModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNStaticMapModule.NAME,
+                ReactModuleInfo(MLRNStaticMapModule.NAME, MLRNStaticMapModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNLocationModule.NAME] =
-                ReactModuleInfo(
-                    MLRNLocationModule.NAME,
-                    MLRNLocationModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNLocationModule.NAME,
+                ReactModuleInfo(MLRNLocationModule.NAME, MLRNLocationModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNLogModule.NAME] =
-                ReactModuleInfo(
-                    MLRNLogModule.NAME,
-                    MLRNLogModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNLogModule.NAME,
+                ReactModuleInfo(MLRNLogModule.NAME, MLRNLogModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNNetworkModule.NAME] =
-                ReactModuleInfo(
-                    MLRNNetworkModule.NAME,
-                    MLRNNetworkModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNNetworkModule.NAME,
+                ReactModuleInfo(MLRNNetworkModule.NAME, MLRNNetworkModule.NAME,
+                    false, false, false, true))
 
-            moduleInfos[MLRNTransformRequestModule.NAME] =
-                ReactModuleInfo(
-                    MLRNTransformRequestModule.NAME,
-                    MLRNTransformRequestModule.NAME,
-                    canOverrideExistingModule = false,
-                    needsEagerInit = false,
-                    isCxxModule = false,
-                    isTurboModule = true,
-                )
+            moduleInfos.put(MLRNTransformRequestModule.NAME,
+                ReactModuleInfo(MLRNTransformRequestModule.NAME, MLRNTransformRequestModule.NAME,
+                    false, false, false, true))
 
             moduleInfos
         }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        val managers: MutableList<ViewManager<*, *>> = ArrayList()
+        val managers: MutableList<ViewManager<*, *>> = mutableListOf()
 
         // components
         managers.add(MLRNCameraManager(reactContext))

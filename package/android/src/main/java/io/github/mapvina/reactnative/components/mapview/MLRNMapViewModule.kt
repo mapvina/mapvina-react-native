@@ -5,7 +5,7 @@ import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.module.annotations.ReactModule
-import io.github.mapvina.android.MapVina
+import com.mapvina.android.MapVina
 import io.github.mapvina.reactnative.NativeMapViewModuleSpec
 import io.github.mapvina.reactnative.utils.ConvertUtils
 import io.github.mapvina.reactnative.utils.ExpressionParser
