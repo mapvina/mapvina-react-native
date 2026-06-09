@@ -17,13 +17,13 @@
     "map-sdk"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/Sunny0025-IT/mapvina-react-native#readme",
+  "homepage": "https://github.com/mapvina/mapvina-react-native#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sunny0025-IT/mapvina-react-native.git"
+    "url": "git+https://github.com/mapvina/mapvina-react-native.git"
   },
   "bugs": {
-    "url": "https://github.com/Sunny0025-IT/mapvina-react-native/issues"
+    "url": "https://github.com/mapvina/mapvina-react-native/issues"
   },
   "scripts": {
     "format:clang-format": "find ios -type f \\( -name \"*.h\" -o -name \"*.m\" -o -name \"*.mm\" \\) -exec clang-format -i {} +",
