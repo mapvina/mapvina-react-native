@@ -3,6 +3,15 @@ require "json"
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 # Global Variable Defaults
+# $MLRN_NATIVE_VERSION matches the distribution repo tag (kept at 1.0.0 for consistency
+# with mapvina-gl-native-distribution). The distribution now resolves the native
+# xcframework via a LOCAL binaryTarget `path:` (offline), so no network release/checksum
+# is required to resolve the SPM dependency.
+#
+# Local dev option: to consume the distribution from a local checkout instead of the
+# remote repo, set $MLRN_SPM_SPEC before requiring this podspec, e.g.
+#   $MLRN_SPM_SPEC = { path: "<absolute-or-relative-path>/mapvina-gl-native-distribution",
+#                      product_name: "MapVina" }
 $MLRN_NATIVE_VERSION ||= "1.0.0"
 $MLRN_SPM_SPEC ||= {
   url: "https://github.com/mapvina/mapvina-gl-native-distribution",
