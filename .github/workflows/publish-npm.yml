@@ -1,0 +1,40 @@
+name: Publish React Native Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.0)'
+        required: true
+        default: '1.0.0'
+  push:
+    tags:
+      - '@mapvina/mapvina-react-native@*'
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Enable corepack
+        run: corepack enable
+      
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Build package
+        run: yarn package prepack
+      
+      - name: Publish to npm
+        run: |
+          cd package
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
