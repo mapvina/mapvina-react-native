@@ -1,7 +1,7 @@
 package io.github.mapvina.reactnative.components.sources.tilesources.rasterdemsource
 
 import android.content.Context
-import com.mapvina.android.style.sources.RasterDemSource
+import io.github.mapvina.android.style.sources.RasterDemSource
 import io.github.mapvina.reactnative.components.sources.tilesources.MLRNTileSource
 
 class MLRNRasterDEMSource(
@@ -20,7 +20,7 @@ class MLRNRasterDEMSource(
         return RasterDemSource(mID, buildTileset(), resolvedTileSize)
     }
 
-    override fun buildTileset(): com.mapvina.android.style.sources.TileSet {
+    override fun buildTileset(): io.github.mapvina.android.style.sources.TileSet {
         val tileSet = super.buildTileset()
         encoding?.let { tileSet.encoding = it }
         return tileSet

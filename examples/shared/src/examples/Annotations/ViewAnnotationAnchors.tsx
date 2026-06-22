@@ -1,4 +1,4 @@
-import { ViewAnnotation } from "@mapvina/mapvina-react-native";
+import { ViewAnnotation } from "@mapvina-com/mapvina-react-native";
 
 import { AbstractAnchors } from "./AbstractAnchors";
 

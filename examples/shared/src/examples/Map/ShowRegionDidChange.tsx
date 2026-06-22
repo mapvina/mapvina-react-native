@@ -4,7 +4,7 @@ import {
   Map,
   type MapRef,
   type ViewStateChangeEvent,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useRef, useState } from "react";
 import { Text, View } from "react-native";
 

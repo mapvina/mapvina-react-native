@@ -4,7 +4,7 @@ import {
   Layer,
   Map,
   type FillExtrusionLayerSpecification,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 
 import indoor3DFeatureCollection from "@/assets/geojson/indoor-3d.json";

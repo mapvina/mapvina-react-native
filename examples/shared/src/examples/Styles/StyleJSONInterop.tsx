@@ -4,7 +4,7 @@ import {
   Map,
   GeoJSONSource,
   type LayerSpecification,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useMemo } from "react";
 
 import { MAPVINA_DEMO_STYLE } from "@/constants/MAPVINA_DEMO_STYLE";

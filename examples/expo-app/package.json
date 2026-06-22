@@ -11,8 +11,8 @@
     "purge": "rm -rf .expo android ios node_modules; yarn cache clean;"
   },
   "dependencies": {
+    "@mapvina-com/mapvina-react-native": "workspace:*",
     "@mapvina-react-native/examples": "workspace:*",
-    "@mapvina/mapvina-react-native": "workspace:*",
     "@react-native-masked-view/masked-view": "0.3.2",
     "expo": "55.0.24",
     "expo-dev-client": "55.0.32",

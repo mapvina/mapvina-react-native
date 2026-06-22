@@ -4,7 +4,7 @@ import {
   Map,
   type MapRef,
   GeoJSONSource,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import type { Feature, FeatureCollection } from "geojson";
 import { useRef, useState } from "react";
 import { Text } from "react-native";

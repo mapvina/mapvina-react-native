@@ -2,14 +2,14 @@ package io.github.mapvina.reactnative.components.location
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.mapvina.android.location.LocationComponent
-import com.mapvina.android.location.LocationComponentActivationOptions
-import com.mapvina.android.location.LocationComponentOptions
-import com.mapvina.android.location.OnCameraTrackingChangedListener
-import com.mapvina.android.location.modes.CameraMode
-import com.mapvina.android.location.modes.RenderMode
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.Style
+import io.github.mapvina.android.location.LocationComponent
+import io.github.mapvina.android.location.LocationComponentActivationOptions
+import io.github.mapvina.android.location.LocationComponentOptions
+import io.github.mapvina.android.location.OnCameraTrackingChangedListener
+import io.github.mapvina.android.location.modes.CameraMode
+import io.github.mapvina.android.location.modes.RenderMode
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.Style
 import io.github.mapvina.reactnative.R
 import io.github.mapvina.reactnative.components.mapview.MLRNMapView
 import io.github.mapvina.reactnative.location.LocationManager

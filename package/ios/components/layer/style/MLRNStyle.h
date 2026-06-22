@@ -221,4 +221,5 @@
 - (void)setIntensity:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 - (void)setIntensityTransition:(MLNLight *)layer withReactStyleValue:(MLRNStyleValue *)styleValue;
 
+- (void)colorReliefLayer:(MLNColorReliefStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid;
 @end

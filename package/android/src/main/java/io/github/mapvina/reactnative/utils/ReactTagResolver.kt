@@ -7,7 +7,7 @@ import com.facebook.react.bridge.UIManager
 import com.facebook.react.uimanager.IllegalViewOperationException
 import com.facebook.react.uimanager.UIManagerHelper
 import com.facebook.react.uimanager.common.UIManagerType
-import com.mapvina.android.log.Logger
+import io.github.mapvina.android.log.Logger
 
 data class Await<V>(
     val fn: (V) -> Unit,

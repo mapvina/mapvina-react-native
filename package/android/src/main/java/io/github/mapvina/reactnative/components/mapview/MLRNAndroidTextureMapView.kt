@@ -2,7 +2,7 @@ package io.github.mapvina.reactnative.components.mapview
 
 import android.content.Context
 import android.util.AttributeSet
-import com.mapvina.android.maps.MapVinaMapOptions
+import io.github.mapvina.android.maps.MapVinaMapOptions
 
 class MLRNAndroidTextureMapView(
     context: Context,

@@ -4,7 +4,7 @@ import {
   Layer,
   Map,
   type MapRef,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useMemo, useRef, useState } from "react";
 import { Text } from "react-native";
 

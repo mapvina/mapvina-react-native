@@ -1,4 +1,4 @@
-import { Layer, Map, GeoJSONSource } from "@mapvina/mapvina-react-native";
+import { Layer, Map, GeoJSONSource } from "@mapvina-com/mapvina-react-native";
 import { type FeatureCollection } from "geojson";
 
 import smileyFeatureCollection from "@/assets/geojson/smiley.json";

@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.facebook.react.bridge.ReactContext
 import com.facebook.react.uimanager.UIManagerHelper
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.geojson.Point
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.geojson.Point
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.mapview.MLRNMapView
 import io.github.mapvina.reactnative.events.PointAnnotationEvent

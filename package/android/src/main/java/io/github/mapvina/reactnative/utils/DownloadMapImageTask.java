@@ -21,8 +21,8 @@ import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.facebook.react.views.imagehelper.ImageSource;
 
-import com.mapvina.android.maps.MapVinaMap;
-import com.mapvina.android.maps.Style;
+import io.github.mapvina.android.maps.MapVinaMap;
+import io.github.mapvina.android.maps.Style;
 
 import java.io.File;
 import java.lang.ref.WeakReference;

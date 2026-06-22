@@ -1,4 +1,4 @@
-import { Map, type PressEvent } from "@mapvina/mapvina-react-native";
+import { Map, type PressEvent } from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 import { Text } from "react-native";
 

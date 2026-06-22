@@ -3,8 +3,8 @@ package io.github.mapvina.reactnative.components.sources.tilesources.vectorsourc
 import android.content.Context
 import androidx.annotation.Size
 import com.facebook.react.bridge.WritableArray
-import com.mapvina.android.style.expressions.Expression
-import com.mapvina.android.style.sources.VectorSource
+import io.github.mapvina.android.style.expressions.Expression
+import io.github.mapvina.android.style.sources.VectorSource
 import io.github.mapvina.reactnative.components.sources.tilesources.MLRNPressableTileSource
 import io.github.mapvina.reactnative.utils.GeoJSONUtils
 

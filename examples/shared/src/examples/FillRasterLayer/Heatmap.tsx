@@ -1,4 +1,4 @@
-import { Layer, Map, GeoJSONSource } from "@mapvina/mapvina-react-native";
+import { Layer, Map, GeoJSONSource } from "@mapvina-com/mapvina-react-native";
 
 import earthquakesData from "@/assets/geojson/earthquakes.json";
 import { MAPVINA_DEMO_STYLE } from "@/constants/MAPVINA_DEMO_STYLE";

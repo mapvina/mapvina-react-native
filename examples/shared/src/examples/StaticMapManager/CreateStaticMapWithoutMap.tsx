@@ -1,4 +1,4 @@
-import { StaticMapImageManager } from "@mapvina/mapvina-react-native";
+import { StaticMapImageManager } from "@mapvina-com/mapvina-react-native";
 import { useEffect, useState } from "react";
 import {
   ActivityIndicator,

@@ -2,7 +2,7 @@ import {
   Map,
   type MapRef,
   type ViewState,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useRef, useState } from "react";
 import { Button } from "react-native";
 import * as z from "zod";

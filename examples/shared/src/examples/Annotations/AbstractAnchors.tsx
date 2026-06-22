@@ -7,7 +7,7 @@ import {
   Marker,
   type PixelPoint,
   ViewAnnotation,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { StyleSheet, Text, View } from "react-native";
 
 import { MAPVINA_DEMO_STYLE } from "@/constants/MAPVINA_DEMO_STYLE";

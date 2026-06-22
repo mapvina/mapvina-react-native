@@ -3,7 +3,7 @@ import {
   Map,
   Marker,
   ViewAnnotation,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useEffect } from "react";
 import { StyleSheet, Text } from "react-native";
 import Animated, {

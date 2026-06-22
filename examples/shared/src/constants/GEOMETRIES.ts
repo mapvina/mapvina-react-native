@@ -1,4 +1,4 @@
-import type { LngLat, LngLatBounds } from "@mapvina/mapvina-react-native";
+import type { LngLat, LngLatBounds } from "@mapvina-com/mapvina-react-native";
 
 export const EU_BOUNDS: LngLatBounds = [-20, 30, 40, 70];
 export const US_BOUNDS: LngLatBounds = [-140, 20, -60, 60];

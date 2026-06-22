@@ -2,7 +2,7 @@ import {
   Camera,
   Map,
   NativeUserLocation,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 
 import { TabBarView } from "@/components/TabBarView";

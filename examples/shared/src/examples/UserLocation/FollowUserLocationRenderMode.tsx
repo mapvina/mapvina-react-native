@@ -3,7 +3,7 @@ import {
   Layer,
   Map,
   UserLocation,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { type ReactNode, useState } from "react";
 import { Button, Text, View } from "react-native";
 

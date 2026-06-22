@@ -1,4 +1,4 @@
-import { GeoJSONSource, Layer, Map } from "@mapvina/mapvina-react-native";
+import { GeoJSONSource, Layer, Map } from "@mapvina-com/mapvina-react-native";
 import { useEffect } from "react";
 import Animated, {
   useAnimatedProps,

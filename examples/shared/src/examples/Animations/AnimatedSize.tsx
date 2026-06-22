@@ -1,4 +1,4 @@
-import { Animated, Map } from "@mapvina/mapvina-react-native";
+import { Animated, Map } from "@mapvina-com/mapvina-react-native";
 import { circle } from "@turf/circle";
 import { useRef, useState } from "react";
 import { Button, Easing } from "react-native";

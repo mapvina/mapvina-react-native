@@ -2,7 +2,7 @@ package io.github.mapvina.reactnative.components.layer.style
 
 import android.content.Context
 import com.facebook.react.bridge.ReadableMap
-import com.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.MapVinaMap
 import io.github.mapvina.reactnative.utils.DownloadMapImageTask
 import io.github.mapvina.reactnative.utils.DownloadMapImageTask.OnAllImagesLoaded
 import io.github.mapvina.reactnative.utils.ImageEntry

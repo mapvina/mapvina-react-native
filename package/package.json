@@ -1,10 +1,9 @@
 {
-  "name": "@mapvina/mapvina-react-native",
+  "name": "@mapvina-com/mapvina-react-native",
   "description": "React Native library for creating maps with MapVina Native for Android & iOS",
   "version": "1.0.0",
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "author": "MapVina",
   "keywords": [
@@ -157,7 +156,7 @@
     }
   },
   "dependencies": {
-    "@mapvina/mapvina-gl-style-spec": "^1.0.1",
+    "@mapvina/mapvina-gl-style-spec": "^1.0.0",
     "@turf/distance": "^7.3.5",
     "@turf/helpers": "^7.3.5",
     "@turf/length": "^7.3.5",

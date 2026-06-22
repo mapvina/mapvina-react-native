@@ -25,28 +25,26 @@ import com.facebook.react.bridge.WritableArray
 import com.facebook.react.bridge.WritableMap
 import com.facebook.react.uimanager.UIManagerHelper
 import com.facebook.react.uimanager.events.EventDispatcher
-import com.mapvina.android.camera.CameraPosition
-import com.mapvina.android.camera.CameraUpdate
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.gestures.MoveGestureDetector
-import com.mapvina.android.log.Logger
-import com.mapvina.android.maps.AttributionDialogManager
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.MapVinaMapOptions
-import com.mapvina.android.maps.MapView
-import com.mapvina.android.maps.OnMapReadyCallback
-import com.mapvina.android.maps.Style
-import com.mapvina.android.maps.Style.OnStyleLoaded
-import com.mapvina.android.plugins.annotation.OnSymbolDragListener
-import com.mapvina.android.plugins.annotation.Symbol
-import com.mapvina.android.plugins.annotation.SymbolManager
-import com.mapvina.android.plugins.scalebar.ScaleBarOptions
-import com.mapvina.android.plugins.scalebar.ScaleBarPlugin
-import com.mapvina.android.style.expressions.Expression
-import com.mapvina.android.style.layers.Layer
-import com.mapvina.android.style.layers.Property
-import com.mapvina.android.style.layers.PropertyFactory
-import com.mapvina.geojson.Feature
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.camera.CameraUpdate
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.gestures.MoveGestureDetector
+import io.github.mapvina.android.log.Logger
+import io.github.mapvina.android.maps.AttributionDialogManager
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.MapVinaMapOptions
+import io.github.mapvina.android.maps.MapView
+import io.github.mapvina.android.maps.OnMapReadyCallback
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.maps.Style.OnStyleLoaded
+import io.github.mapvina.android.plugins.annotation.OnSymbolDragListener
+import io.github.mapvina.android.plugins.annotation.Symbol
+import io.github.mapvina.android.plugins.annotation.SymbolManager
+import io.github.mapvina.android.style.expressions.Expression
+import io.github.mapvina.android.style.layers.Layer
+import io.github.mapvina.android.style.layers.Property
+import io.github.mapvina.android.style.layers.PropertyFactory
+import io.github.mapvina.geojson.Feature
 import io.github.mapvina.reactnative.R
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.annotations.markerview.MLRNMarkerView
@@ -160,11 +158,6 @@ open class MLRNMapView(
     private var compassMargins: IntArray? = null
     private var compassHiddenFacingNorth: Boolean? = null
 
-    private var scaleBarEnabled: Boolean? = null
-    private var scaleBarMarginTop: Float? = null
-    private var scaleBarMarginLeft: Float? = null
-    private var scaleBarPlugin: ScaleBarPlugin? = null
-
     private var windowInsets: WindowInsetsCompat? = null
 
     private var symbolManager: SymbolManager? = null
@@ -210,7 +203,6 @@ open class MLRNMapView(
         ViewCompat.setOnApplyWindowInsetsListener(this) { _, insets ->
             windowInsets = insets
             updateUISettings()
-            updateScaleBar()
             insets
         }
         ViewCompat.requestApplyInsets(this)
@@ -472,7 +464,6 @@ open class MLRNMapView(
         updatePreferredFramesPerSecond()
         updateInsets()
         updateUISettings()
-        updateScaleBar()
 
         mapVinaMap.addOnCameraMoveStartedListener { reason ->
             cameraChangeTracker.setReason(reason)
@@ -595,7 +586,6 @@ open class MLRNMapView(
         if (changed) {
             handler.post {
                 updateUISettings()
-                updateScaleBar()
             }
         }
     }
@@ -941,38 +931,6 @@ open class MLRNMapView(
         updateUISettings()
     }
 
-    fun setReactScaleBar(value: Boolean) {
-        scaleBarEnabled = value
-        updateScaleBar()
-    }
-
-    fun setReactScaleBarPosition(position: ReadableMap?) {
-        if (position == null) {
-            scaleBarMarginTop = null
-            scaleBarMarginLeft = null
-        } else {
-            scaleBarMarginTop = if (position.hasKey("top")) (displayDensity * position.getInt("top")) else 0f
-            scaleBarMarginLeft = if (position.hasKey("left")) (displayDensity * position.getInt("left")) else 0f
-        }
-        updateScaleBar()
-    }
-
-    private fun updateScaleBar() {
-        val map = mapVinaMap ?: return
-
-        if (scaleBarPlugin == null) {
-            scaleBarPlugin = ScaleBarPlugin(this, map)
-        }
-
-        val viewInsets = getSystemInsetsForView()
-        val options = ScaleBarOptions(context)
-        options.setMarginTop((scaleBarMarginTop ?: (8 * displayDensity)) + viewInsets.top)
-        options.setMarginLeft((scaleBarMarginLeft ?: (10 * displayDensity)) + viewInsets.left)
-        scaleBarPlugin!!.create(options)
-        scaleBarPlugin!!.isEnabled = scaleBarEnabled ?: false
-
-        reflow()
-    }
 
     fun getCenter(): WritableArray {
         val cameraPosition = mapVinaMap!!.cameraPosition

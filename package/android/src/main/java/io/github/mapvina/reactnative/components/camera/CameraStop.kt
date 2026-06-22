@@ -2,12 +2,12 @@ package io.github.mapvina.reactnative.components.camera
 
 import android.content.Context
 import com.facebook.react.bridge.ReadableMap
-import com.mapvina.android.camera.CameraPosition
-import com.mapvina.android.camera.CameraUpdateFactory.newCameraPosition
-import com.mapvina.android.camera.CameraUpdateFactory.newLatLngBounds
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.geometry.LatLngBounds
-import com.mapvina.android.maps.MapVinaMap.CancelableCallback
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.camera.CameraUpdateFactory.newCameraPosition
+import io.github.mapvina.android.camera.CameraUpdateFactory.newLatLngBounds
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.geometry.LatLngBounds
+import io.github.mapvina.android.maps.MapVinaMap.CancelableCallback
 import io.github.mapvina.reactnative.components.camera.constants.CameraEasing
 import io.github.mapvina.reactnative.components.mapview.MLRNMapView
 import io.github.mapvina.reactnative.utils.GeoJSONUtils

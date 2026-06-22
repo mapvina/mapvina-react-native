@@ -2,12 +2,12 @@ package io.github.mapvina.reactnative.components.location
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.mapvina.android.location.modes.RenderMode
-import com.mapvina.android.location.permissions.PermissionsManager
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.OnMapReadyCallback
-import com.mapvina.android.maps.Style
-import com.mapvina.android.maps.Style.OnStyleLoaded
+import io.github.mapvina.android.location.modes.RenderMode
+import io.github.mapvina.android.location.permissions.PermissionsManager
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.OnMapReadyCallback
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.maps.Style.OnStyleLoaded
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.mapview.MLRNMapView
 

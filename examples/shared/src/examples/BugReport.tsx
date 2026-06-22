@@ -1,4 +1,4 @@
-import { Map } from "@mapvina/mapvina-react-native";
+import { Map } from "@mapvina-com/mapvina-react-native";
 
 export function BugReport() {
   return (

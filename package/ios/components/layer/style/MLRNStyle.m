@@ -561,6 +561,27 @@
   }
 }
 
+- (void)colorReliefLayer:(MLNColorReliefStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid
+{
+  if (![self _hasReactStyle:reactStyle]) {
+    return;
+  }
+
+  NSArray<NSString*> *styleProps = [reactStyle allKeys];
+  for (NSString *prop in styleProps) {
+    MLRNStyleValue *styleValue = [MLRNStyleValue make:reactStyle[prop]];
+
+    if ([prop isEqualToString:@"visibility"]) {
+      [self setHillshadeStyleLayerVisibility:layer withReactStyleValue:styleValue];
+    } else if ([prop isEqualToString:@"colorReliefColor"]) {
+      layer.colorReliefColor = styleValue.mlnStyleValue;
+    } else if ([prop isEqualToString:@"colorReliefOpacity"]) {
+      layer.colorReliefOpacity = styleValue.mlnStyleValue;
+    } else {
+    }
+  }
+}
+
 - (void)backgroundLayer:(MLNBackgroundStyleLayer *)layer withReactStyle:(NSDictionary *)reactStyle isValid:(BOOL (^)(void)) isValid
 {
   if (![self _hasReactStyle:reactStyle]) {
@@ -866,7 +887,7 @@
 
 - (void)setIconOverlap:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
-    layer.iconOverlap = styleValue.mlnStyleValue;
+    layer.iconAllowsOverlap = styleValue.mlnStyleValue;
 }
 
 - (void)setIconIgnorePlacement:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
@@ -1036,7 +1057,7 @@
 
 - (void)setTextOverlap:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue
 {
-    layer.textOverlap = styleValue.mlnStyleValue;
+    layer.textAllowsOverlap = styleValue.mlnStyleValue;
 }
 
 - (void)setTextIgnorePlacement:(MLNSymbolStyleLayer *)layer withReactStyleValue:(MLRNStyleValue *)styleValue

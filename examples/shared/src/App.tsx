@@ -1,14 +1,10 @@
-import { LocationManager } from "@mapvina/mapvina-react-native";
+import { LocationManager } from "@mapvina-com/mapvina-react-native";
 import { useEffect, useState } from "react";
 import {
-  Linking,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+  StyleSheet
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { Home } from "@/Examples";
 import { colors } from "@/styles/colors";

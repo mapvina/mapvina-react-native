@@ -3,7 +3,7 @@ import {
   Map,
   GeoJSONSource,
   Layer,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 
 import mapvinaSdfIcon from "@/assets/images/mapvina-sdf.png";
 import { MAPVINA_DEMO_STYLE } from "@/constants/MAPVINA_DEMO_STYLE";

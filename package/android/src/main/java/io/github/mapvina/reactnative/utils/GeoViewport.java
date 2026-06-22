@@ -2,9 +2,9 @@ package io.github.mapvina.reactnative.utils;
 
 import android.graphics.PointF;
 
-import com.mapvina.android.geometry.LatLng;
-import com.mapvina.android.geometry.LatLngBounds;
-import com.mapvina.android.geometry.VisibleRegion;
+import io.github.mapvina.android.geometry.LatLng;
+import io.github.mapvina.android.geometry.LatLngBounds;
+import io.github.mapvina.android.geometry.VisibleRegion;
 
 /**
  * Ported from https://github.com/mapbox/geo-viewport/blob/master/index.js

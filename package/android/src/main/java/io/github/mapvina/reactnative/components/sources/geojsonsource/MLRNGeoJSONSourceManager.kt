@@ -10,7 +10,7 @@ import com.facebook.react.uimanager.ViewManagerDelegate
 import com.facebook.react.uimanager.annotations.ReactProp
 import com.facebook.react.viewmanagers.MLRNGeoJSONSourceManagerDelegate
 import com.facebook.react.viewmanagers.MLRNGeoJSONSourceManagerInterface
-import com.mapvina.android.style.expressions.Expression
+import io.github.mapvina.android.style.expressions.Expression
 import io.github.mapvina.reactnative.components.sources.MLRNSourceManager
 import io.github.mapvina.reactnative.utils.ExpressionParser
 import java.net.URI

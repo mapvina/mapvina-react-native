@@ -3,7 +3,7 @@ import {
   Map,
   type MapRef,
   GeoJSONSource,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useRef, useState } from "react";
 import { Button, type LayoutRectangle, Platform, View } from "react-native";
 

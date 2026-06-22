@@ -6,11 +6,11 @@ import android.location.Location
 import android.os.Looper
 import android.util.Log
 import androidx.annotation.RequiresPermission
-import com.mapvina.android.location.engine.LocationEngine
-import com.mapvina.android.location.engine.LocationEngineCallback
-import com.mapvina.android.location.engine.LocationEngineRequest
-import com.mapvina.android.location.engine.LocationEngineResult
-import com.mapvina.android.location.permissions.PermissionsManager
+import io.github.mapvina.android.location.engine.LocationEngine
+import io.github.mapvina.android.location.engine.LocationEngineCallback
+import io.github.mapvina.android.location.engine.LocationEngineRequest
+import io.github.mapvina.android.location.engine.LocationEngineResult
+import io.github.mapvina.android.location.permissions.PermissionsManager
 import io.github.mapvina.reactnative.location.engine.LocationEngineProvider
 import java.lang.ref.WeakReference
 

@@ -14,10 +14,10 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
-import com.mapvina.android.location.engine.LocationEngineCallback
-import com.mapvina.android.location.engine.LocationEngineImpl
-import com.mapvina.android.location.engine.LocationEngineRequest
-import com.mapvina.android.location.engine.LocationEngineResult
+import io.github.mapvina.android.location.engine.LocationEngineCallback
+import io.github.mapvina.android.location.engine.LocationEngineImpl
+import io.github.mapvina.android.location.engine.LocationEngineRequest
+import io.github.mapvina.android.location.engine.LocationEngineResult
 
 /**
  * Wraps implementation of Fused Location Provider

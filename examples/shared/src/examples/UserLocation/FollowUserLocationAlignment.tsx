@@ -1,5 +1,5 @@
-import { Camera, Map, UserLocation } from "@mapvina/mapvina-react-native";
-import type { ViewPadding } from "@mapvina/mapvina-react-native";
+import { Camera, Map, UserLocation } from "@mapvina-com/mapvina-react-native";
+import type { ViewPadding } from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 
 import { TabBarView } from "@/components/TabBarView";

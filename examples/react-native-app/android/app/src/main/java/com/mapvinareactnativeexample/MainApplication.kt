@@ -6,6 +6,8 @@ import com.facebook.react.ReactApplication
 import com.facebook.react.ReactHost
 import com.facebook.react.ReactNativeApplicationEntryPoint.loadReactNative
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.WellKnownTileServer
 
 class MainApplication :
     Application(),
@@ -23,6 +25,7 @@ class MainApplication :
 
     override fun onCreate() {
         super.onCreate()
+        MapVina.getInstance(this, "public_key", WellKnownTileServer.MapVina)
         loadReactNative(this)
     }
 }

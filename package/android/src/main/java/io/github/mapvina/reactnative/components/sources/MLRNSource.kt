@@ -5,10 +5,10 @@ import android.view.View
 import com.facebook.react.bridge.ReactContext
 import com.facebook.react.uimanager.UIManagerHelper
 import com.facebook.react.uimanager.events.EventDispatcher
-import com.mapvina.android.log.Logger
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.Style
-import com.mapvina.android.style.sources.Source
+import io.github.mapvina.android.log.Logger
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.style.sources.Source
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.layer.MLRNLayer
 import io.github.mapvina.reactnative.components.mapview.MLRNMapView

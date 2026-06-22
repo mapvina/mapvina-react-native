@@ -1,6 +1,6 @@
 package io.github.mapvina.reactnative.components.sources.tilesources
 
-import com.mapvina.android.style.sources.TileSet
+import io.github.mapvina.android.style.sources.TileSet
 
 interface TileSourceInterface {
     var url: String?

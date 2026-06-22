@@ -5,7 +5,7 @@ import {
   type GeoJSONSourceRef,
   type SymbolLayerSpecification,
   type CircleLayerSpecification,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import moment from "moment";
 import { useRef, useState } from "react";
 import {

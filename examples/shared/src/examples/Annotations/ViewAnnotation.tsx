@@ -6,7 +6,7 @@ import {
   Map,
   ViewAnnotation,
   type ViewAnnotationRef,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { type ReactNode, useRef, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 

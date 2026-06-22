@@ -5804,77 +5804,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mapvina-react-native/examples@workspace:*, @mapvina-react-native/examples@workspace:examples/shared":
+"@mapvina-com/mapvina-react-native@workspace:*, @mapvina-com/mapvina-react-native@workspace:package":
   version: 0.0.0-use.local
-  resolution: "@mapvina-react-native/examples@workspace:examples/shared"
-  dependencies:
-    "@babel/core": "npm:7.29.0"
-    "@babel/plugin-transform-export-namespace-from": "npm:7.27.1"
-    "@jest/expect-utils": "npm:29.7.0"
-    "@mapvina/mapvina-react-native": "workspace:*"
-    "@react-native-masked-view/masked-view": "npm:0.3.2"
-    "@react-navigation/native": "npm:7.2.4"
-    "@react-navigation/stack": "npm:7.9.1"
-    "@turf/along": "npm:7.3.5"
-    "@turf/bbox-polygon": "npm:7.3.5"
-    "@turf/circle": "npm:7.3.5"
-    "@turf/distance": "npm:7.3.5"
-    "@turf/helpers": "npm:7.3.5"
-    "@types/react": "npm:19.2.14"
-    babel-plugin-module-resolver: "npm:5.0.3"
-    eslint: "npm:9.39.4"
-    eslint-config-universe: "npm:15.0.4"
-    jest-diff: "npm:29.7.0"
-    moment: "npm:2.30.1"
-    prettier: "npm:3.8.3"
-    react: "npm:19.2.3"
-    react-native: "npm:0.85.3"
-    react-native-builder-bob: "npm:0.41.0"
-    react-native-gesture-handler: "npm:2.31.1"
-    react-native-monorepo-config: "npm:0.3.3"
-    react-native-reanimated: "npm:4.3.0"
-    react-native-safe-area-context: "npm:5.7.0"
-    react-native-screens: "npm:4.24.0"
-    react-native-worklets: "npm:0.8.1"
-    typescript: "npm:5.9.3"
-    zod: "npm:4.4.3"
-  peerDependencies:
-    "@react-native-masked-view/masked-view": "*"
-    react: "*"
-    react-native: "*"
-    react-native-gesture-handler: "*"
-    react-native-reanimated: "*"
-    react-native-safe-area-context: "*"
-    react-native-screens: "*"
-    react-native-worklets: "*"
-  languageName: unknown
-  linkType: soft
-
-"@mapvina/mapvina-gl-style-spec@npm:1.0.1, @mapvina/mapvina-gl-style-spec@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@mapvina/mapvina-gl-style-spec@npm:1.0.1"
-  dependencies:
-    "@mapbox/jsonlint-lines-primitives": "npm:~2.0.2"
-    "@mapbox/unitbezier": "npm:^0.0.1"
-    json-stringify-pretty-compact: "npm:^4.0.0"
-    minimist: "npm:^1.2.8"
-    quickselect: "npm:^3.0.0"
-    rw: "npm:^1.3.3"
-    tinyqueue: "npm:^3.0.0"
-  bin:
-    gl-style-format: dist/gl-style-format.mjs
-    gl-style-migrate: dist/gl-style-migrate.mjs
-    gl-style-validate: dist/gl-style-validate.mjs
-  checksum: 10c0/b1b64a0663517e266007ff0d50d7294aa2a137d3ae0eac85a97d697682bc7eeb37b01512cf38defdfe185010bcad1fd039d5967b887a2e5df8d39e604ce2a416
-  languageName: node
-  linkType: hard
-
-"@mapvina/mapvina-react-native@workspace:*, @mapvina/mapvina-react-native@workspace:package":
-  version: 0.0.0-use.local
-  resolution: "@mapvina/mapvina-react-native@workspace:package"
+  resolution: "@mapvina-com/mapvina-react-native@workspace:package"
   dependencies:
     "@expo/config-plugins": "npm:55.0.8"
-    "@mapvina/mapvina-gl-style-spec": "npm:^1.0.1"
+    "@mapvina/mapvina-gl-style-spec": "npm:^1.0.0"
     "@react-native-community/cli": "npm:20.1.3"
     "@react-native/babel-preset": "npm:0.85.3"
     "@react-native/jest-preset": "npm:0.85.3"
@@ -5917,6 +5852,71 @@ __metadata:
       optional: true
   languageName: unknown
   linkType: soft
+
+"@mapvina-react-native/examples@workspace:*, @mapvina-react-native/examples@workspace:examples/shared":
+  version: 0.0.0-use.local
+  resolution: "@mapvina-react-native/examples@workspace:examples/shared"
+  dependencies:
+    "@babel/core": "npm:7.29.0"
+    "@babel/plugin-transform-export-namespace-from": "npm:7.27.1"
+    "@jest/expect-utils": "npm:29.7.0"
+    "@mapvina-com/mapvina-react-native": "workspace:*"
+    "@react-native-masked-view/masked-view": "npm:0.3.2"
+    "@react-navigation/native": "npm:7.2.4"
+    "@react-navigation/stack": "npm:7.9.1"
+    "@turf/along": "npm:7.3.5"
+    "@turf/bbox-polygon": "npm:7.3.5"
+    "@turf/circle": "npm:7.3.5"
+    "@turf/distance": "npm:7.3.5"
+    "@turf/helpers": "npm:7.3.5"
+    "@types/react": "npm:19.2.14"
+    babel-plugin-module-resolver: "npm:5.0.3"
+    eslint: "npm:9.39.4"
+    eslint-config-universe: "npm:15.0.4"
+    jest-diff: "npm:29.7.0"
+    moment: "npm:2.30.1"
+    prettier: "npm:3.8.3"
+    react: "npm:19.2.3"
+    react-native: "npm:0.85.3"
+    react-native-builder-bob: "npm:0.41.0"
+    react-native-gesture-handler: "npm:2.31.1"
+    react-native-monorepo-config: "npm:0.3.3"
+    react-native-reanimated: "npm:4.3.0"
+    react-native-safe-area-context: "npm:5.7.0"
+    react-native-screens: "npm:4.24.0"
+    react-native-worklets: "npm:0.8.1"
+    typescript: "npm:5.9.3"
+    zod: "npm:4.4.3"
+  peerDependencies:
+    "@react-native-masked-view/masked-view": "*"
+    react: "*"
+    react-native: "*"
+    react-native-gesture-handler: "*"
+    react-native-reanimated: "*"
+    react-native-safe-area-context: "*"
+    react-native-screens: "*"
+    react-native-worklets: "*"
+  languageName: unknown
+  linkType: soft
+
+"@mapvina/mapvina-gl-style-spec@npm:1.0.1, @mapvina/mapvina-gl-style-spec@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "@mapvina/mapvina-gl-style-spec@npm:1.0.1"
+  dependencies:
+    "@mapbox/jsonlint-lines-primitives": "npm:~2.0.2"
+    "@mapbox/unitbezier": "npm:^0.0.1"
+    json-stringify-pretty-compact: "npm:^4.0.0"
+    minimist: "npm:^1.2.8"
+    quickselect: "npm:^3.0.0"
+    rw: "npm:^1.3.3"
+    tinyqueue: "npm:^3.0.0"
+  bin:
+    gl-style-format: dist/gl-style-format.mjs
+    gl-style-migrate: dist/gl-style-migrate.mjs
+    gl-style-validate: dist/gl-style-validate.mjs
+  checksum: 10c0/b1b64a0663517e266007ff0d50d7294aa2a137d3ae0eac85a97d697682bc7eeb37b01512cf38defdfe185010bcad1fd039d5967b887a2e5df8d39e604ce2a416
+  languageName: node
+  linkType: hard
 
 "@mdx-js/mdx@npm:^3.0.0":
   version: 3.1.0
@@ -13182,8 +13182,8 @@ __metadata:
   resolution: "expo-app@workspace:examples/expo-app"
   dependencies:
     "@babel/core": "npm:7.29.0"
+    "@mapvina-com/mapvina-react-native": "workspace:*"
     "@mapvina-react-native/examples": "workspace:*"
-    "@mapvina/mapvina-react-native": "workspace:*"
     "@react-native-masked-view/masked-view": "npm:0.3.2"
     "@types/node": "npm:24.12.2"
     "@types/react": "npm:19.2.14"

@@ -1,7 +1,7 @@
 package io.github.mapvina.reactnative.location
 
 import android.location.Location
-import com.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.geometry.LatLng
 
 class UserLocation
     @JvmOverloads

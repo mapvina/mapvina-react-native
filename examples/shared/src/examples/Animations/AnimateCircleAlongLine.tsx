@@ -4,7 +4,7 @@ import {
   Layer,
   Map,
   GeoJSONSource,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useEffect, useState } from "react";
 
 import { PulseCircleLayer } from "@/components/PulseCircleLayer";

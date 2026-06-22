@@ -3,7 +3,7 @@ import {
   Map,
   UserLocation,
   useCurrentPosition,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { Text } from "react-native";
 
 import { Bubble } from "@/components/Bubble";

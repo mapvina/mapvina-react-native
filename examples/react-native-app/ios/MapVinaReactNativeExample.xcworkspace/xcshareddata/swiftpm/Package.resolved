@@ -1,13 +1,13 @@
 {
-  "originHash" : "e70d3525c8e2819a8b34f22909815dab5c700c25a06c32388f3930f7b3627768",
+  "originHash" : "75750aaa4ef47daf9183297d987f7ede2dd922aad2106e18c8915639964c8a8d",
   "pins" : [
     {
-      "identity" : "maplibre-gl-native-distribution",
+      "identity" : "mapvina-gl-native-distribution",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/maplibre/maplibre-gl-native-distribution",
+      "location" : "https://github.com/mapvina/mapvina-gl-native-distribution",
       "state" : {
-        "revision" : "e0ee2c11a2859e22d3f0dd29705c18169bdafa7b",
-        "version" : "6.25.0"
+        "revision" : "80632031c693cff41f0a7e29490d7454061f1d3a",
+        "version" : "1.0.0"
       }
     }
   ],

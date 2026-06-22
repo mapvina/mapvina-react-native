@@ -6,7 +6,7 @@ import {
   OfflinePack,
   type OfflinePackCreateOptions,
   type OfflinePackStatus,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useEffect, useRef, useState } from "react";
 import { Alert, Button, Text, View } from "react-native";
 

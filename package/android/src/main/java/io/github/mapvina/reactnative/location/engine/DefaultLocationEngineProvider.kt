@@ -2,8 +2,8 @@ package io.github.mapvina.reactnative.location.engine
 
 import android.content.Context
 import android.util.Log
-import com.mapvina.android.location.engine.LocationEngine
-import com.mapvina.android.location.engine.LocationEngineDefault.getDefaultLocationEngine
+import io.github.mapvina.android.location.engine.LocationEngine
+import io.github.mapvina.android.location.engine.LocationEngineDefault.getDefaultLocationEngine
 
 class DefaultLocationEngineProvider : LocationEngineProvidable {
     override fun getLocationEngine(context: Context): LocationEngine {

@@ -94,6 +94,10 @@ dependencies {
     // MapVina Native
     implementation "io.github.mapvina:android-sdk-${getConfigurableExtOrDefault('nativeVariant')}:${getConfigurableExtOrDefault('nativeVersion')}"
 
+    // MapVina core dependencies (explicit to ensure Kotlin compiler classpath)
+    implementation "io.github.mapvina:android-sdk-geojson:1.0.0"
+    implementation "io.github.mapvina:mapvina-android-gestures:1.0.0"
+
     // MapVina Plugins
     implementation("io.github.mapvina:android-plugin-annotation-v9:${getConfigurableExtOrDefault('pluginVersion')}") {
         exclude(group: "io.github.mapvina", module: "android-sdk")
@@ -120,4 +124,16 @@ react {
     jsRootDir = file("../src/")
     libraryName = "MapVinaReactNative"
     codegenJavaPackageName = "io.github.mapvina.reactnative"
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach { task ->
+    task.doFirst {
+        println "=== KOTLIN_LIBS for ${task.name} ==="
+        task.libraries.files.each { f ->
+            if (f.name.contains('mapvina') || f.name.contains('geojson') || f.name.contains('gestures') || f.name.contains('annotation') || f.name.contains('scalebar') || f.name.contains('turf')) {
+                println "  ${f.name}"
+            }
+        }
+        println "=== END ==="
+    }
 }

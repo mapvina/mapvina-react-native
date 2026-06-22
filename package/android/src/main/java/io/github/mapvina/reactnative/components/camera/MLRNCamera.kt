@@ -12,14 +12,14 @@ import com.facebook.react.bridge.WritableMap
 import com.facebook.react.uimanager.UIManagerHelper
 import com.facebook.react.uimanager.events.Event
 import com.facebook.react.uimanager.events.EventDispatcher
-import com.mapvina.android.camera.CameraPosition
-import com.mapvina.android.camera.CameraUpdateFactory.newCameraPosition
-import com.mapvina.android.geometry.LatLngBounds
-import com.mapvina.android.location.OnCameraTrackingChangedListener
-import com.mapvina.android.location.permissions.PermissionsManager
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.MapVinaMap.CancelableCallback
-import com.mapvina.android.maps.Style
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.camera.CameraUpdateFactory.newCameraPosition
+import io.github.mapvina.android.geometry.LatLngBounds
+import io.github.mapvina.android.location.OnCameraTrackingChangedListener
+import io.github.mapvina.android.location.permissions.PermissionsManager
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.MapVinaMap.CancelableCallback
+import io.github.mapvina.android.maps.Style
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.camera.constants.CameraEasing
 import io.github.mapvina.reactnative.components.location.LocationComponentManager
@@ -332,10 +332,10 @@ class MLRNCamera(
                     override fun onCameraTrackingChanged(currentMode: Int) {
                         val userTrackingMode =
                             when (currentMode) {
-                                com.mapvina.android.location.modes.CameraMode.NONE -> TrackUserLocationMode.NONE
-                                com.mapvina.android.location.modes.CameraMode.TRACKING -> TrackUserLocationMode.DEFAULT
-                                com.mapvina.android.location.modes.CameraMode.TRACKING_COMPASS -> TrackUserLocationMode.HEADING
-                                com.mapvina.android.location.modes.CameraMode.TRACKING_GPS -> TrackUserLocationMode.COURSE
+                                io.github.mapvina.android.location.modes.CameraMode.NONE -> TrackUserLocationMode.NONE
+                                io.github.mapvina.android.location.modes.CameraMode.TRACKING -> TrackUserLocationMode.DEFAULT
+                                io.github.mapvina.android.location.modes.CameraMode.TRACKING_COMPASS -> TrackUserLocationMode.HEADING
+                                io.github.mapvina.android.location.modes.CameraMode.TRACKING_GPS -> TrackUserLocationMode.COURSE
                                 else -> TrackUserLocationMode.NONE
                             }
 
@@ -347,7 +347,7 @@ class MLRNCamera(
                 },
             )
         } else {
-            locationComponentManager!!.setCameraMode(com.mapvina.android.location.modes.CameraMode.NONE)
+            locationComponentManager!!.setCameraMode(io.github.mapvina.android.location.modes.CameraMode.NONE)
         }
     }
 

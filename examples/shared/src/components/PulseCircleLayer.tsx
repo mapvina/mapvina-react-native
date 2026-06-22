@@ -1,4 +1,4 @@
-import { Animated as MLRNAnimated } from "@mapvina/mapvina-react-native";
+import { Animated as MLRNAnimated } from "@mapvina-com/mapvina-react-native";
 import { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 

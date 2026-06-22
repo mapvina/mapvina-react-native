@@ -3,7 +3,7 @@ import {
   Map,
   type MapRef,
   type LngLat,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useRef, useState } from "react";
 import { Text } from "react-native";
 

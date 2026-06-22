@@ -1,4 +1,4 @@
-import { Layer, Map, VectorSource } from "@mapvina/mapvina-react-native";
+import { Layer, Map, VectorSource } from "@mapvina-com/mapvina-react-native";
 
 import { MAPVINA_DEMO_STYLE } from "@/constants/MAPVINA_DEMO_STYLE";
 

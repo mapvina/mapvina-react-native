@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 
-import com.mapvina.android.geometry.LatLng;
+import io.github.mapvina.android.geometry.LatLng;
 import io.github.mapvina.reactnative.components.annotations.pointannotation.MLRNPointAnnotation;
 import io.github.mapvina.reactnative.events.constants.EventKeys;
 import io.github.mapvina.reactnative.events.constants.EventTypes;

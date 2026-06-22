@@ -236,7 +236,6 @@ open class MLRNMapViewManager(
         mapView: MLRNMapView,
         value: Boolean,
     ) {
-        mapView.setReactScaleBar(value)
     }
 
     @ReactProp(name = "scaleBarPosition")
@@ -244,7 +243,6 @@ open class MLRNMapViewManager(
         mapView: MLRNMapView,
         value: ReadableMap?,
     ) {
-        mapView.setReactScaleBarPosition(value)
     }
 
     //endregion

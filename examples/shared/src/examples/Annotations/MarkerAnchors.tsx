@@ -1,4 +1,4 @@
-import { Marker } from "@mapvina/mapvina-react-native";
+import { Marker } from "@mapvina-com/mapvina-react-native";
 
 import { AbstractAnchors } from "./AbstractAnchors";
 

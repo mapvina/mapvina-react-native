@@ -2,18 +2,18 @@
 // This file is auto-generated from scripts/src/templates/renderMLRNStyleFactory.ts
 package io.github.mapvina.reactnative.components.layer.style
 
-import com.mapvina.android.style.layers.BackgroundLayer
-import com.mapvina.android.style.layers.CircleLayer
-import com.mapvina.android.style.layers.FillExtrusionLayer
-import com.mapvina.android.style.layers.FillLayer
-import com.mapvina.android.style.layers.HeatmapLayer
-import com.mapvina.android.style.layers.HillshadeLayer
-import com.mapvina.android.style.layers.LineLayer
-import com.mapvina.android.style.layers.PropertyFactory
-import com.mapvina.android.style.layers.RasterLayer
-import com.mapvina.android.style.layers.SymbolLayer
-import com.mapvina.android.style.light.Light
-import com.mapvina.android.style.light.Position
+import io.github.mapvina.android.style.layers.BackgroundLayer
+import io.github.mapvina.android.style.layers.CircleLayer
+import io.github.mapvina.android.style.layers.FillExtrusionLayer
+import io.github.mapvina.android.style.layers.FillLayer
+import io.github.mapvina.android.style.layers.HeatmapLayer
+import io.github.mapvina.android.style.layers.HillshadeLayer
+import io.github.mapvina.android.style.layers.LineLayer
+import io.github.mapvina.android.style.layers.PropertyFactory
+import io.github.mapvina.android.style.layers.RasterLayer
+import io.github.mapvina.android.style.layers.SymbolLayer
+import io.github.mapvina.android.style.light.Light
+import io.github.mapvina.android.style.light.Position
 
 object MLRNStyleFactory {
     const val VALUE_KEY: String = "value"

@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.facebook.react.bridge.ReactContext
 import com.facebook.react.uimanager.UIManagerHelper
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.plugins.annotation.Symbol
-import com.mapvina.android.plugins.annotation.SymbolOptions
-import com.mapvina.geojson.Point
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.plugins.annotation.Symbol
+import io.github.mapvina.android.plugins.annotation.SymbolOptions
+import io.github.mapvina.geojson.Point
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.annotations.callout.MLRNCallout
 import io.github.mapvina.reactnative.components.mapview.MLRNMapView

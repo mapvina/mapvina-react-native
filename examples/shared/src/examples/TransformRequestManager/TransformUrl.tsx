@@ -1,4 +1,4 @@
-import { Map, TransformRequestManager } from "@mapvina/mapvina-react-native";
+import { Map, TransformRequestManager } from "@mapvina-com/mapvina-react-native";
 import { useEffect } from "react";
 import { StyleSheet } from "react-native";
 

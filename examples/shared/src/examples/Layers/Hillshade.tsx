@@ -3,7 +3,7 @@ import {
   Map,
   RasterDEMSource,
   type StyleSpecification,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 
 const mapStyle: StyleSpecification = {
   version: 8,

@@ -3,9 +3,9 @@ package io.github.mapvina.reactnative.components.annotations.markerview
 import android.graphics.PointF
 import android.graphics.RectF
 import android.view.View
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.MapView
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.MapView
 
 class MarkerViewManager(
     private val mapView: MapView,

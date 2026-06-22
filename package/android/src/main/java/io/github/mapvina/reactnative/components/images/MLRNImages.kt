@@ -9,8 +9,8 @@ import com.facebook.react.bridge.WritableMap
 import com.facebook.react.uimanager.UIManagerHelper
 import com.facebook.react.uimanager.events.Event
 import com.facebook.react.uimanager.events.EventDispatcher
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.utils.BitmapUtils
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.utils.BitmapUtils
 import io.github.mapvina.reactnative.R
 import io.github.mapvina.reactnative.components.AbstractMapFeature
 import io.github.mapvina.reactnative.components.mapview.MLRNMapView

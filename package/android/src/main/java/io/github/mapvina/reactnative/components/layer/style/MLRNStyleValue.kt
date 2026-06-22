@@ -5,8 +5,8 @@ import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.bridge.ReadableType
 import com.facebook.react.bridge.WritableNativeMap
-import com.mapvina.android.style.expressions.Expression
-import com.mapvina.android.style.layers.TransitionOptions
+import io.github.mapvina.android.style.expressions.Expression
+import io.github.mapvina.android.style.layers.TransitionOptions
 import io.github.mapvina.reactnative.utils.ExpressionParser.fromTyped
 import io.github.mapvina.reactnative.utils.ImageEntry
 

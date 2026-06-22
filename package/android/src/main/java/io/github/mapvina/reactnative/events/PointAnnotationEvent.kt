@@ -4,7 +4,7 @@ import android.graphics.PointF
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.WritableMap
 import com.facebook.react.uimanager.events.Event
-import com.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.geometry.LatLng
 import io.github.mapvina.reactnative.utils.GeoJSONUtils
 
 class PointAnnotationEvent(

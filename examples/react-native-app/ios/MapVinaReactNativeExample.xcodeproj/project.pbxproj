@@ -519,10 +519,10 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		D7A1B69541AF6CC5CF21A154 /* XCRemoteSwiftPackageReference "mapvina-gl-native-distribution" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.io/github/mapvina/mapvina-gl-native-distribution";
+			repositoryURL = "https://github.com/mapvina/mapvina-gl-native-distribution";
 			requirement = {
 				kind = exactVersion;
-				version = 6.25.0;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

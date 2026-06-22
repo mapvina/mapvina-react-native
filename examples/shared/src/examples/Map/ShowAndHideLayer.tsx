@@ -1,4 +1,4 @@
-import { Camera, Layer, Map } from "@mapvina/mapvina-react-native";
+import { Camera, Layer, Map } from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 import { Text } from "react-native";
 

@@ -1,4 +1,4 @@
-import { Animated, Camera, Map } from "@mapvina/mapvina-react-native";
+import { Animated, Camera, Map } from "@mapvina-com/mapvina-react-native";
 import { useRef } from "react";
 import { Button, Easing } from "react-native";
 

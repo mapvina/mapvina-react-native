@@ -4,9 +4,9 @@ import android.content.Context
 import android.graphics.PointF
 import android.graphics.RectF
 import com.facebook.react.bridge.ReadableMap
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.style.sources.Source
-import com.mapvina.geojson.Feature
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.style.sources.Source
+import io.github.mapvina.geojson.Feature
 import io.github.mapvina.reactnative.events.MapPressEventWithFeatures
 
 abstract class MLRNPressableSource<T : Source?>(

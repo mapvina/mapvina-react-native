@@ -3,7 +3,7 @@ import {
   Layer,
   Map,
   GeoJSONSource,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { bboxPolygon } from "@turf/bbox-polygon";
 
 import { EU_BOUNDS } from "@/constants/GEOMETRIES";

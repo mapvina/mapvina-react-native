@@ -4,7 +4,7 @@ import {
   type ImagesProps,
   Layer,
   Map,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 
 import mapvinaIcon from "@/assets/images/mapvina.png";

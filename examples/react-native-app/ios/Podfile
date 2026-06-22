@@ -33,6 +33,16 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+# Use local MapVina SPM dependency to avoid network issues
+$MLRN_SPM_SPEC = {
+  url: "https://github.com/mapvina/mapvina-gl-native-distribution",
+  requirement: {
+    kind: "exactVersion",
+    version: "1.0.0"
+  },
+  product_name: "MapVina"
+}
+
 target 'MapVinaReactNativeExample' do
   config = use_native_modules!
 

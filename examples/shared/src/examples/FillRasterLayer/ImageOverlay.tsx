@@ -4,7 +4,7 @@ import {
   type LngLat,
   Map,
   Layer,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useEffect, useState } from "react";
 
 import radar0 from "@/assets/images/radar0.png";

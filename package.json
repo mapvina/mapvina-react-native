@@ -22,7 +22,7 @@
     "examples:shared": "yarn workspace @mapvina-react-native/examples",
     "examples:react-native": "yarn workspace react-native-app",
     "examples:expo": "yarn workspace expo-app",
-    "package": "yarn workspace @mapvina/mapvina-react-native",
+    "package": "yarn workspace @mapvina-com/mapvina-react-native",
     "scripts": "yarn workspace scripts"
   },
   "packageManager": "yarn@4.10.3",

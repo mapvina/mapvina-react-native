@@ -1,4 +1,4 @@
-import { Map, Layer, RasterSource } from "@mapvina/mapvina-react-native";
+import { Map, Layer, RasterSource } from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 
 import { TabBarView } from "@/components/TabBarView";

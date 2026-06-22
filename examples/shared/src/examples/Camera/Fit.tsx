@@ -4,7 +4,7 @@ import {
   type CameraRef,
   Map,
   type ViewPadding,
-} from "@mapvina/mapvina-react-native";
+} from "@mapvina-com/mapvina-react-native";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 

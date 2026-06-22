@@ -3,7 +3,7 @@ package io.github.mapvina.reactnative.utils;
 import android.graphics.Point;
 import android.graphics.PointF;
 
-import com.mapvina.android.geometry.LatLng;
+import io.github.mapvina.android.geometry.LatLng;
 
 import java.util.ArrayList;
 import java.util.HashMap;

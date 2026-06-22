@@ -1,4 +1,4 @@
-import { Map, type StyleSpecification } from "@mapvina/mapvina-react-native";
+import { Map, type StyleSpecification } from "@mapvina-com/mapvina-react-native";
 import { useState } from "react";
 import { Text } from "react-native";
 

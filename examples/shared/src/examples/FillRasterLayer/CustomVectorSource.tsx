@@ -1,5 +1,5 @@
-import { Layer, Map, VectorSource } from "@mapvina/mapvina-react-native";
-import type { VectorSourceRef } from "@mapvina/mapvina-react-native";
+import { Layer, Map, VectorSource } from "@mapvina-com/mapvina-react-native";
+import type { VectorSourceRef } from "@mapvina-com/mapvina-react-native";
 import { useRef, useState } from "react";
 import { Text } from "react-native";
 

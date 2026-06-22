@@ -1,4 +1,4 @@
-import { Map, type MapRef } from "@mapvina/mapvina-react-native";
+import { Map, type MapRef } from "@mapvina-com/mapvina-react-native";
 import { useRef } from "react";
 import { Button } from "react-native";
 
