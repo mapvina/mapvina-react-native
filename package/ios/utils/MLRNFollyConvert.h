@@ -1,5 +1,7 @@
 #if __has_include(<react/utils/FollyConvert.h>)
 #import <react/utils/FollyConvert.h>
+#elif __has_include(<React-Core/React/RCTFollyConvert.h>)
+#import <React-Core/React/RCTFollyConvert.h>
 #elif __has_include(<React/RCTFollyConvert.h>)
 #import <React/RCTFollyConvert.h>
 #elif __has_include("FollyConvert.h")
