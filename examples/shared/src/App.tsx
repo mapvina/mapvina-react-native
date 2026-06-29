@@ -1,7 +1,7 @@
 import { LocationManager } from "@mapvina-com/mapvina-react-native";
 import { useEffect, useState } from "react";
 import {
-  StyleSheet
+    StyleSheet
 } from "react-native";
 import "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";

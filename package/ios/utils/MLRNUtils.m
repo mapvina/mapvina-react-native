@@ -2,7 +2,80 @@
 
 @import MapVina;
 
+#pragma mark - HTTP1Protocol
+
+@interface HTTP1Protocol : NSURLProtocol
+@end
+
+@implementation HTTP1Protocol
+
+static NSString *const kHTTP1ProtocolHandledKey = @"HTTP1ProtocolHandled";
+
++ (BOOL)canInitWithRequest:(NSURLRequest *)request {
+  NSString *scheme = request.URL.scheme.lowercaseString;
+  if (![scheme isEqualToString:@"https"] && ![scheme isEqualToString:@"http"]) {
+    return NO;
+  }
+  NSString *host = request.URL.host.lowercaseString;
+  if (![host containsString:@"mapvina.com"]) {
+    return NO;
+  }
+  if ([NSURLProtocol propertyForKey:kHTTP1ProtocolHandledKey inRequest:request] != nil) {
+    return NO;
+  }
+  return YES;
+}
+
++ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
+  return request;
+}
+
+- (void)startLoading {
+  NSMutableURLRequest *newRequest = [self.request mutableCopy];
+  [NSURLProtocol setProperty:@YES forKey:kHTTP1ProtocolHandledKey inRequest:newRequest];
+
+  dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:newRequest
+                                         returningResponse:&response
+                                                     error:&error];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      if (error) {
+        [self.client URLProtocol:self didFailWithError:error];
+      } else {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        [self.client URLProtocol:self didReceiveResponse:httpResponse cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+        [self.client URLProtocol:self didLoadData:data];
+        [self.client URLProtocolDidFinishLoading:self];
+      }
+    });
+  });
+}
+
+- (void)stopLoading {
+}
+
+@end
+
 @implementation MLRNUtils
+
++ (void)load {
+  @autoreleasepool {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    config.timeoutIntervalForResource = 30;
+    config.HTTPMaximumConnectionsPerHost = 8;
+    config.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    config.URLCache = nil;
+
+    NSMutableArray *protocols = [config.protocolClasses mutableCopy] ?: [NSMutableArray array];
+    [protocols insertObject:[HTTP1Protocol class] atIndex:0];
+    config.protocolClasses = protocols;
+
+    [MLNNetworkConfiguration sharedManager].sessionConfiguration = config;
+    NSLog(@"MLRNUtils: registered HTTP1Protocol in MLNNetworkConfiguration");
+  }
+}
 
 static double const MS_TO_S = 0.001;
 

@@ -1,7 +1,7 @@
 {
   "name": "@mapvina-com/mapvina-react-native",
   "description": "React Native library for creating maps with MapVina Native for Android & iOS",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publishConfig": {
     "access": "public"
   },
