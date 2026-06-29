@@ -5828,7 +5828,7 @@ __metadata:
     eslint: "npm:9.39.4"
     eslint-config-universe: "npm:15.0.4"
     jest: "npm:29.7.0"
-    prettier: "npm:3.8.3"
+    prettier: "npm:3.9.3"
     react: "npm:19.2.3"
     react-native: "npm:0.85.3"
     react-native-builder-bob: "npm:0.41.0"
@@ -5875,7 +5875,7 @@ __metadata:
     eslint-config-universe: "npm:15.0.4"
     jest-diff: "npm:29.7.0"
     moment: "npm:2.30.1"
-    prettier: "npm:3.8.3"
+    prettier: "npm:3.9.3"
     react: "npm:19.2.3"
     react-native: "npm:0.85.3"
     react-native-builder-bob: "npm:0.41.0"
@@ -19766,7 +19766,7 @@ __metadata:
   resolution: "monorepo@workspace:."
   dependencies:
     "@castlabs/prettier-tsdoc-plugin": "npm:0.5.8"
-    prettier: "npm:3.8.3"
+    prettier: "npm:3.9.3"
   languageName: unknown
   linkType: soft
 
@@ -22179,12 +22179,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.8.3":
-  version: 3.8.3
-  resolution: "prettier@npm:3.8.3"
+"prettier@npm:3.9.3":
+  version: 3.9.3
+  resolution: "prettier@npm:3.9.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10c0/754816fd7593eb80f6376d7476d463e832c38a12f32775a82683adb6e35b772b1f484d65f19401507b983a8c8a7cd5a4a9f12006bd56491e8f35503473f77473
+  checksum: 10c0/56623a03f0a1a791413b76458dbcab1dff8e5a7d02744be98ccc589a3a8cf8371dda8fba68f2d2336ded8475ed40f6eaf66f0f4d39df33235656018f64d2fdac
   languageName: node
   linkType: hard
 
@@ -24022,7 +24022,7 @@ __metadata:
     "@types/node": "npm:24.12.2"
     eslint: "npm:9.39.4"
     eslint-config-universe: "npm:15.0.4"
-    prettier: "npm:3.8.3"
+    prettier: "npm:3.9.3"
     tsx: "npm:4.21.0"
     typescript: "npm:5.9.3"
   languageName: unknown
