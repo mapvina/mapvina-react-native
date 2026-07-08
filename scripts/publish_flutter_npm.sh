@@ -11,9 +11,10 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-# Directories
-FLUTTER_DIR="/Volumes/DATA/MapVina/mapvina-migration-workspace/upstream-maplibre/flutter-mapvina-gl"
-RN_DIR="/Volumes/DATA/MapVina/mapvina-migration-workspace/upstream-maplibre/mapvina-react-native"
+# Directories (derived from the script location; override via env if needed)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+RN_DIR="${RN_DIR:-$(cd "$SCRIPT_DIR/.." && pwd)}"
+FLUTTER_DIR="${FLUTTER_DIR:-$(cd "$SCRIPT_DIR/../../flutter-mapvina-gl" 2>/dev/null && pwd)}"
 
 # ==========================================
 # 1. Check pub.dev login
