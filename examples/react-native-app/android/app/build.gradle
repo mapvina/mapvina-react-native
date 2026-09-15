@@ -115,7 +115,7 @@ dependencies {
     implementation("com.facebook.react:react-android")
 
     // MapVina Native SDK (for API key configuration)
-    implementation("io.github.mapvina:android-sdk-opengl:1.0.1")
+    implementation("io.github.mapvina:android-sdk-opengl:1.0.2")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

@@ -1,3 +1,8 @@
+## 1.0.2
+
+* Android: upgrade MapVina Native SDK from `1.0.1` to `io.github.mapvina:android-sdk-opengl:1.0.2`.
+* iOS: keep MapVina Native distribution `1.0.0` until a new iOS XCFramework is published.
+
 ## [11.2.1](https://github.io/github/mapvina/mapvina-react-native/compare/v11.2.0...v11.2.1) (2026-05-12)
 
 ### Bug Fixes
